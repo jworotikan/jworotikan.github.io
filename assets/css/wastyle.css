@@ -1,0 +1,26 @@
+.widgets-whatsapp {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 996;
+    background: #bb7b05;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    transition: all 0.4s;
+  }
+  .widgets-whatsapp i {
+    font-size: 28px;
+    color: #fff;
+    line-height: 0;
+  }
+  .widgets-whatsapp:hover {
+    background: #0678e3;
+    color: #fff;
+  }
+  .widgets-whatsapp.active {
+    visibility: visible;
+    opacity: 1;
+  }
