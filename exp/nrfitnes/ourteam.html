@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="headline-center margin-bottom-60">
+        <h2>TEAM</h2>
+    </div>
+
+    <div class="row team-v5 margin-bottom-30">
+        
+            
+            <div class="col-sm-4 sm-margin-bottom-50">
+                <div class="team-img">
+                    <img class="img-responsive" src="assets/img/team/<?= $triPhoto ?>" alt="">
+                </div>
+                <span><?= $triName ?></span>
+                <ul class="list-inline social-icons-v1">
+                    
+                        <li><a href="<?= $triSpotify ?>"><i class="rounded-x fa-brands fa-spotify"></i></a></li>
+                    
+                    
+                        <li><a href="<?= $triInstagram ?>"><i class="rounded-x fa-brands fa-square-instagram"></i></a></li>
+                    
+                </ul>
+
+                <small><a data-toggle="modal" data-target="#modal<?= preg_replace('/\s+/', '', $triName) ?>">Klik For More Info</a></small>
+            </div>
+
+            <div class="modal fade" id="modal<?= preg_replace('/\s+/', '', $triName) ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                            <h4 id="myModalLabel1" class="modal-title"><?= $triName ?></h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="team-img">
+                                        <img class="img-responsive" src="assets/img/team/<?= $triPhoto ?>" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-8 text-justify">
+                                    <p><?= $triDesc ?></p>
+                                    <div class="row text-center">
+                                        
+                                            <div class="col-md-6 col-xs-12 margin-bottom-30">
+                                                <a href="<?= $triSpotify ?>">
+                                                    <button class="btn-u btn-block rounded-4x btn-u-green" type="button"><i class="fa-brands fa-spotify"></i> My Spotify</button>
+                                                </a>
+                                            </div>
+                                        
+                                        
+                                            <div class="col-md-6 col-xs-12 margin-bottom-30">
+                                                <a href="<?= $triInstagram ?>">
+                                                    <button class="btn-u btn-block rounded-4x btn-u-red" type="button"><i class="fa-brands fa-square-instagram"></i> My Instagram</button>
+                                                </a>
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button data-dismiss="modal" class="btn-u btn-u-default" type="button">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+    </div>
+</div>

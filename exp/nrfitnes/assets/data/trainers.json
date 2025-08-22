@@ -1,0 +1,23 @@
+[
+  {
+    "triName": "Jonathan Worotikan",
+    "triDesc": "Software Engineer dengan pengalaman lebih dari 10 tahun di berbagai industri.",
+    "triPhoto": "AJ.jpg",
+    "triInstagram": "https://instagram.com/jonathan",
+    "triSpotify": "https://open.spotify.com/user/jonathan"
+  },
+  {
+    "triName": "Edi Sutrisno",
+    "triDesc": "Trainer berfokus pada pengembangan web dan aplikasi modern.",
+    "triPhoto": "Jane.jpg",
+    "triInstagram": "https://instagram.com/edisutrisno",
+    "triSpotify": "spotify"
+  },
+  {
+    "triName": "Sugito",
+    "triDesc": "Spesialis AI dan Machine Learning dengan pengalaman implementasi di berbagai project.",
+    "triPhoto": "Kris.jpg",
+    "triInstagram": "instagram",
+    "triSpotify": "https://open.spotify.com/user/sugito"
+  }
+]
