@@ -60,6 +60,137 @@
         display: inline-block;
         text-decoration: none;
     }
+/* Services (What I Do) - Clean Elegant White Style */
+.service-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  color: #1e293b;
+}
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+.service-card .icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: #111827; /* netral */
+}
+.service-card h5 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #111827;
+}
+.service-card p {
+  font-size: 15px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+.badge {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+
+.icon-wrap {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: #fff;
+}
+.bg-gradient-blue { background: linear-gradient(135deg,#4facfe,#00f2fe); }
+.bg-gradient-orange { background: linear-gradient(135deg,#f7971e,#ffd200); }
+.bg-gradient-green { background: linear-gradient(135deg,#00b09b,#96c93d); }
+.bg-gradient-pink { background: linear-gradient(135deg,#ff6a88,#ff99ac); }
+.see-more {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: #1763bb;
+  font-weight: 500;
+}
+.portfolio-card {
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  transition: 0.3s;
+  background: #fafafa;
+}
+.portfolio-card:hover {
+  background: #f0f8ff;
+  transform: scale(1.02);
+}
+
+/* Elegant Modal */
+.elegant-modal {
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  animation: modalFadeScale 0.3s ease;
+}
+
+.custom-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #f3f4f6;
+  border-radius: 50%;
+  padding: 6px;
+  opacity: 1;
+  transition: all 0.2s ease;
+}
+.custom-close:hover {
+  background: #e5e7eb;
+}
+
+/* Portfolio card inside modal */
+.portfolio-card {
+  background: #ffffff;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.portfolio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Animation */
+@keyframes modalFadeScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.portfolio-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.portfolio-link:hover h6 {
+  color: #2563eb; /* biru elegan untuk highlight judul */
+}
+
+
     </style>
 
 
@@ -157,64 +288,134 @@
         </section><!-- End About Section -->
 
 
-        <!-- ======= Services Section ======= -->
-        <section id="services" class="services">
-    <div class="container" data-aos="fade-up">
+       <!-- ======= Services Section (Clean Minimal Style) ======= -->
+<section id="services" class="services py-5" style="background: #f9f9f9;">
+  <div class="container" data-aos="fade-up">
 
-        <div class="section-title">
-            <h2>What I Do</h2>
-            <p>I help businesses build scalable, reliable, and customized digital solutions — from ERP modules to mobile apps and full-stack systems. Here’s how I bring value to each project:</p>
+    <div class="section-title text-center mb-5">
+      <h2 class="fw-bold" style="color:#111827;">What I Do</h2>
+      <p style="color:#4b5563;">Transforming ideas into scalable, reliable, and beautiful digital experiences.</p>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- Card 1 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="service-card h-100 p-4 text-center">
+          <div class="icon mb-3">
+            <i class='bx bx-code-alt fs-1'></i>
+          </div>
+          <h5 class="fw-bold">Custom Software & Odoo</h5>
+          <p class="small">Tailored apps & Odoo modules: Work Permit, e-Wallet, High-Risk Permit, Lost & Found.</p>
         </div>
+      </div>
 
-        <div class="row">
-
-            <!-- Software & Odoo Development -->
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                <div class="icon-box iconbox-blue">
-                    <div class="icon">
-                        <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                            <path fill="#f5f5f5" d="..."></path>
-                        </svg>
-                        <i class='bx bx-code'></i>
-                    </div>
-                    <h4>Custom Software & Odoo Modules</h4>
-                    <p>Design and develop tailored applications including permit management, e-Wallets, and survey systems. Experienced in customizing <b>Odoo</b> modules such as Work Permit, High-Risk Permit, and Lost & Found.</p>
-                </div>
-            </div>
-
-            <!-- Backend & Cloud -->
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-                <div class="icon-box iconbox-orange">
-                    <div class="icon">
-                        <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                            <path fill="#f5f5f5" d="..."></path>
-                        </svg>
-                        <i class='bx bxs-server'></i>
-                    </div>
-                    <h4>Backend Development & DevOps</h4>
-                    <p>Build secure and scalable backend systems using <b>Python, NodeJS, PostgreSQL</b>, and <b>MySQL</b>. Proficient in <b>AWS, Docker</b>, and RESTful APIs to optimize deployment pipelines and infrastructure.</p>
-                </div>
-            </div>
-
-            <!-- Multimedia & UI Design -->
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-                <div class="icon-box iconbox-pink">
-                    <div class="icon">
-                        <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                            <path fill="#f5f5f5" d="..."></path>
-                        </svg>
-                        <i class="bx bx-palette"></i>
-                    </div>
-                    <h4>UI/UX & Multimedia Design</h4>
-                    <p>Create interface visuals and media content for websites and mobile apps. Comfortable using tools like <b>Adobe Photoshop</b>, <b>Illustrator</b>, and <b>FL Studio</b> for both creative and functional outputs.</p>
-                </div>
-            </div>
-
+      <!-- Card 2 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="service-card h-100 p-4 text-center">
+          <div class="icon mb-3">
+            <i class='bx bxs-server fs-1'></i>
+          </div>
+          <h5 class="fw-bold">Backend & DevOps</h5>
+          <p class="small">Secure, scalable systems with Python, NodeJS, PostgreSQL, AWS, Docker & APIs.</p>
         </div>
+      </div>
+
+      <!-- Card 3 (Special with Modal) -->
+      <div class="col-lg-3 col-md-6">
+        <div class="service-card h-100 p-4 text-center" data-bs-toggle="modal" data-bs-target="#portfolioModal" style="cursor:pointer;">
+          <div class="icon mb-3">
+            <i class="bx bx-layout fs-1"></i>
+          </div>
+          <h5 class="fw-bold">Frontend Development</h5>
+          <p class="small">Modern & responsive UI with Vue.js, React, Bootstrap, Tailwind CSS.</p>
+          <span class="badge mt-2">View Portfolio</span>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="service-card h-100 p-4 text-center">
+          <div class="icon mb-3">
+            <i class="bx bx-palette fs-1"></i>
+          </div>
+          <h5 class="fw-bold">UI/UX & Multimedia</h5>
+          <p class="small">Creative design using Photoshop, Illustrator & FL Studio for apps & media.</p>
+        </div>
+      </div>
 
     </div>
+  </div>
 </section>
-<!-- End Services Section -->
+
+
+        <!-- Portfolio Modal -->
+<div class="modal fade" id="portfolioModal" tabindex="-1" aria-labelledby="portfolioModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content elegant-modal">
+      
+      <!-- Close Button -->
+      <button type="button" class="btn-close custom-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      
+      <div class="modal-header border-0 text-center">
+        <h5 class="modal-title fw-bold" id="portfolioModalLabel">My Portfolio</h5>
+      </div>
+      
+      <div class="modal-body">
+        <p class="text-muted mb-4 text-center">A showcase of my selected works in software development, UI/UX, and multimedia.</p>
+        
+        <!-- Example portfolio grid -->
+        <div class="row g-4">
+            <!-- Portfolio Item 1 (Website Link) -->
+            <div class="col-md-6">
+                <div class="portfolio-card p-3">
+                    <a href="https://rfitnes.free.nf" target="_blank" class="portfolio-link">
+                        <!-- <img src="assets/img/rfitnes-thumb.jpg" class="img-fluid rounded mb-2" alt="Rfitnes Website"> -->
+                        <h6 class="fw-bold">Rfitnes Company Profile</h6>
+                        <p class="small text-muted">Corporate website built with responsive UI/UX.</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Portfolio Item 2 (Image Preview) -->
+            <!-- <div class="col-md-6">
+                <div class="portfolio-card p-3">
+                <a href="assets/img/design-portfolio.jpg" data-bs-toggle="modal" data-bs-target="#imagePreviewModal">
+                    <img src="assets/img/design-portfolio-thumb.jpg" class="img-fluid rounded mb-2" alt="Design Portfolio">
+                    <h6 class="fw-bold">UI/UX Design Showcase</h6>
+                    <p class="small text-muted">Landing page concept for modern startup.</p>
+                </a>
+                </div>
+            </div> -->
+        </div>
+
+        <!-- Image Preview Modal -->
+        <div class="modal fade" id="imagePreviewModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content elegant-modal">
+            <button type="button" class="btn-close custom-close" data-bs-dismiss="modal"></button>
+            <div class="modal-body text-center">
+                <img src="assets/img/design-portfolio.jpg" class="img-fluid rounded" alt="Full Preview">
+            </div>
+            </div>
+        </div>
+        </div>
+
+
+      </div>
+      
+      <div class="modal-footer border-0 justify-content-center">
+        <button type="button" class="btn btn-dark rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
 
 
         <section id="resume" class="resume">
