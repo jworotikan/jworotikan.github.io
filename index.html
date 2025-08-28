@@ -208,6 +208,8 @@
                 <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
                 <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a>
                 </li>
+                <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-grid"></i> <span>Portfolio</span></a></li>
+
                 <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a>
                 </li>
                 <li><a  id="whatsappLink" href="#" target="_blank"><i class="bx bxl-whatsapp"></i>
@@ -329,7 +331,7 @@
           </div>
           <h5 class="fw-bold">Frontend Development</h5>
           <p class="small">Modern & responsive UI with Vue.js, React, Bootstrap, Tailwind CSS.</p>
-          <span class="badge mt-2">View Portfolio</span>
+          <!-- <span class="badge mt-2">View Portfolio</span> -->
         </div>
       </div>
 
@@ -349,78 +351,45 @@
 </section>
 
 
-        <!-- Portfolio Modal -->
-<div class="modal fade" id="portfolioModal" tabindex="-1" aria-labelledby="portfolioModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content elegant-modal">
-      
-      <!-- Close Button -->
-      <button type="button" class="btn-close custom-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      
-      <div class="modal-header border-0 text-center">
-        <h5 class="modal-title fw-bold" id="portfolioModalLabel">My Portfolio</h5>
-      </div>
-      
-      <div class="modal-body">
-        <p class="text-muted mb-4 text-center">A showcase of my selected works in software development, UI/UX, and multimedia.</p>
-        
-        <!-- Example portfolio grid -->
-        <div class="row g-4">
-            <!-- Portfolio Item 1 (Website Link) -->
-            <div class="col-md-6">
-                <div class="portfolio-card p-3">
-                    <a href="https://rfitnes.free.nf" target="_blank" class="portfolio-link">
-                        <img src="assets/img/port/rfitness-sc.jpg" class="img-fluid rounded mb-2" alt="Rfitnes Website">
-                        <h6 class="fw-bold">Rfitnes</h6>
-                        <p class="small text-muted">Corporate website built with responsive UI/UX.</p>
-                    </a>
-                </div>
-            </div>
 
-            <div class="col-md-6">
-                <div class="portfolio-card p-3">
-                    <a href="https://lapakarsitek.com" target="_blank" class="portfolio-link">
-                        <img src="assets/img/port/lapakarsitek-sc.jpg" class="img-fluid rounded mb-2" alt="Lapak Arsitek Website">
-                        <h6 class="fw-bold">Lapak Arsitek</h6>
-                        <p class="small text-muted">Corporate website and Catalog built with responsive UI/UX.</p>
-                    </a>
-                </div>
-            </div>
+<!-- ======= Portfolio Section ======= -->
+<section id="portfolio" class="portfolio py-5" style="background:#f9f9f9;">
+  <div class="container" data-aos="fade-up">
 
-            <!-- Portfolio Item 2 (Image Preview) -->
-            <!-- <div class="col-md-6">
-                <div class="portfolio-card p-3">
-                <a href="assets/img/design-portfolio.jpg" data-bs-toggle="modal" data-bs-target="#imagePreviewModal">
-                    <img src="assets/img/design-portfolio-thumb.jpg" class="img-fluid rounded mb-2" alt="Design Portfolio">
-                    <h6 class="fw-bold">UI/UX Design Showcase</h6>
-                    <p class="small text-muted">Landing page concept for modern startup.</p>
-                </a>
-                </div>
-            </div> -->
-        </div>
-
-        <!-- Image Preview Modal -->
-        <div class="modal fade" id="imagePreviewModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content elegant-modal">
-            <button type="button" class="btn-close custom-close" data-bs-dismiss="modal"></button>
-            <div class="modal-body text-center">
-                <img src="assets/img/design-portfolio.jpg" class="img-fluid rounded" alt="Full Preview">
-            </div>
-            </div>
-        </div>
-        </div>
-
-
-      </div>
-      
-      <div class="modal-footer border-0 justify-content-center">
-        <button type="button" class="btn btn-dark rounded-pill px-4" data-bs-dismiss="modal">Close</button>
-      </div>
-      
+    <div class="section-title text-center mb-5">
+      <h2 class="fw-bold" style="color:#111827;">Portfolio</h2>
+      <p style="color:#4b5563;">Selected works in software development, UI/UX, and multimedia.</p>
     </div>
+
+    <div class="row g-4">
+      <!-- Portfolio Item 1 -->
+      <div class="col-md-6">
+        <div class="portfolio-card p-3">
+          <a href="https://rfitnes.free.nf" target="_blank" class="portfolio-link">
+            <img src="assets/img/port/rfitness-sc.jpg" class="img-fluid rounded mb-2" alt="Rfitnes Website">
+            <h6 class="fw-bold">Rfitnes</h6>
+            <p class="small text-muted">Corporate website built with responsive UI/UX.</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- Portfolio Item 2 -->
+      <div class="col-md-6">
+        <div class="portfolio-card p-3">
+          <a href="https://lapakarsitek.com" target="_blank" class="portfolio-link">
+            <img src="assets/img/port/lapakarsitek-sc.jpg" class="img-fluid rounded mb-2" alt="Lapak Arsitek Website">
+            <h6 class="fw-bold">Lapak Arsitek</h6>
+            <p class="small text-muted">Corporate website and catalog built with responsive UI/UX.</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bisa tambah item berikutnya -->
+    </div>
+
   </div>
-</div>
+</section>
+<!-- End Portfolio Section -->
 
 
 
