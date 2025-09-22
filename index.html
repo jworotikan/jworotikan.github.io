@@ -769,10 +769,29 @@
       document.getElementById("whatsappLink").href = link;
     </script>
 
-    <script>
-fetch("https://jworotikanvisitors.free.nf/logvisitors.php", {
-    method: "POST",
-    mode: "no-cors" // Supaya tidak error di GitHub Pages
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Ganti URL ini dengan alamat URL API PHP kamu
+    const apiUrl = 'https://jworotikanvisitors.free.nf/logvisitors.php'; 
+
+    const data = {
+        page: window.location.pathname // Mengambil path halaman saat ini
+    };
+
+    fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(result => {
+        console.log('API Response:', result);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 });
 </script>
 
