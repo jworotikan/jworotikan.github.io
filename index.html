@@ -768,31 +768,46 @@
 
       document.getElementById("whatsappLink").href = link;
     </script>
-<script type="text/javascript"
+
+    <script type="text/javascript"
   src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js">
 </script>
 <script type="text/javascript">
   (function(){
-     emailjs.init("Uli5yDxKS6KIorOj4"); // ganti dengan User ID Anda
+     emailjs.init("YOUR_USER_ID"); // ganti dengan User ID EmailJS Anda
   })();
 
-  // Kirim notifikasi ketika halaman diload
   window.onload = function() {
-    // Ambil info dasar browser
-    let visitorInfo = {
-      browser: navigator.userAgent,
-      os: navigator.platform,
-      time: new Date().toLocaleString()
-    };
+    // Ambil IP + lokasi visitor
+    fetch("https://ipapi.co/json/")
+      .then(response => response.json())
+      .then(data => {
+        let visitorInfo = {
+          browser: navigator.userAgent,
+          os: navigator.platform,
+          time: new Date().toLocaleString(),
+          ip: data.ip,
+          city: data.city,
+          region: data.region,
+          country: data.country_name,
+          isp: data.org
+        };
 
-    emailjs.send("service_8psw2om", "template_t0wvlxr", visitorInfo)
-      .then(function(response) {
-         console.log("Visitor log terkirim!", response.status, response.text);
-      }, function(err) {
-         console.error("Gagal kirim visitor log", err);
+        // Kirim via EmailJS
+        emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", visitorInfo)
+          .then(function(response) {
+             console.log("Visitor log terkirim!", response.status, response.text);
+          }, function(err) {
+             console.error("Gagal kirim visitor log", err);
+          });
+      })
+      .catch(err => {
+        console.error("Gagal ambil data IP/location visitor", err);
       });
   }
 </script>
+
+
 
 
 
