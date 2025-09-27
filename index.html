@@ -768,32 +768,32 @@
 
       document.getElementById("whatsappLink").href = link;
     </script>
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+  (function(){
+     emailjs.init("Uli5yDxKS6KIorOj4"); // ganti dengan User ID Anda
+  })();
 
-<script>
-document.addEventListener('DOMContentLoaded', (event) => {
-    // Ganti URL ini dengan alamat URL API PHP kamu
-    const apiUrl = 'https://jworotikanvisitors.free.nf/logvisitors.php'; 
-
-    const data = {
-        page: window.location.pathname // Mengambil path halaman saat ini
+  // Kirim notifikasi ketika halaman diload
+  window.onload = function() {
+    // Ambil info dasar browser
+    let visitorInfo = {
+      browser: navigator.userAgent,
+      os: navigator.platform,
+      time: new Date().toLocaleString()
     };
 
-    fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-    .then(response => response.json())
-    .then(result => {
-        console.log('API Response:', result);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-});
+    emailjs.send("service_8psw2om", "template_t0wvlxr", visitorInfo)
+      .then(function(response) {
+         console.log("Visitor log terkirim!", response.status, response.text);
+      }, function(err) {
+         console.error("Gagal kirim visitor log", err);
+      });
+  }
 </script>
+
 
 
 </body>
