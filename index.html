@@ -1181,6 +1181,55 @@
         font-size: 12.5px;
         padding: 2px 10px;
       }
+      .project.featured {
+        grid-column: 1 / -1;
+        flex-direction: row;
+      }
+      .project.featured .project-img {
+        flex: 0 0 58%;
+        aspect-ratio: 16 / 9;
+        border-bottom: none;
+        border-right: 1px solid var(--line);
+      }
+      .project.featured .project-body {
+        padding: 40px 44px;
+        justify-content: center;
+      }
+      .project.featured h3 {
+        font-size: 26px;
+        letter-spacing: -0.02em;
+        margin-bottom: 12px;
+      }
+      .project.featured p {
+        flex: 0 0 auto;
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+      .featured-link {
+        margin-top: 22px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14.5px;
+        font-weight: 700;
+        color: var(--blue);
+      }
+      @media (max-width: 920px) {
+        .project.featured {
+          flex-direction: column;
+        }
+        .project.featured .project-img {
+          flex: none;
+          border-right: none;
+          border-bottom: 1px solid var(--line);
+        }
+        .project.featured .project-body {
+          padding: 24px;
+        }
+        .project.featured h3 {
+          font-size: 21px;
+        }
+      }
       .project.text-only .project-body {
         padding-top: 26px;
       }
@@ -1928,12 +1977,12 @@
               <p>Company website and showcase for GoVirtual's digital solutions.</p>
               <div class="url">govirtual.id</div>
             </a>
-            <div class="vt dev tilt reveal">
-              <div class="vt-top"><span class="vt-status dev">In Progress</span><i class="bx bx-time-five"></i></div>
+            <a class="vt tilt reveal" href="https://exploreindonesia.govirtual.id" target="_blank" rel="noopener">
+              <div class="vt-top"><span class="vt-status">Live</span><i class="bx bx-link-external"></i></div>
               <h3>Portal Eksplorasi Indonesia</h3>
               <p>National digital exploration portal developed in collaboration with Bappenas.</p>
-              <div class="url">Coming soon</div>
-            </div>
+              <div class="url">exploreindonesia.govirtual.id</div>
+            </a>
           </div>
         </div>
       </section>
@@ -1947,6 +1996,23 @@
             <p>Websites and applications delivered for companies and institutions.</p>
           </div>
           <div class="projects stagger">
+            <a class="project featured tilt reveal" href="https://exploreindonesia.govirtual.id" target="_blank" rel="noopener">
+              <div class="project-img">
+                <img src="assets/img/port/exploreindonesia-sc.jpg" alt="Portal Eksplorasi Indonesia website" loading="lazy" />
+                <div class="visit"><em>Visit website <i class="bx bx-right-arrow-alt"></i></em></div>
+              </div>
+              <div class="project-body">
+                <div class="project-cat">Featured · National Portal</div>
+                <h3>Portal Eksplorasi Indonesia</h3>
+                <p>
+                  Immersive national exploration portal built with Bappenas. Visitors
+                  explore strategic locations, regional potential and interactive
+                  360° virtual experiences across Indonesia in a single platform.
+                </p>
+                <div class="tags"><span class="tag">Virtual Tour</span><span class="tag">Pano2VR</span><span class="tag">JavaScript</span><span class="tag">Government</span></div>
+                <span class="featured-link">exploreindonesia.govirtual.id <i class="bx bx-link-external"></i></span>
+              </div>
+            </a>
             <a class="project tilt reveal" href="https://govirtual.id" target="_blank" rel="noopener">
               <div class="project-img">
                 <img src="assets/img/port/govirtual-sc.png" alt="GoVirtual Indonesia website" loading="lazy" />
