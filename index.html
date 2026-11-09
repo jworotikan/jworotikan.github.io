@@ -2400,30 +2400,76 @@
       })();
     </script>
 
-    <!-- EmailJS visitor tracking (preserved from original) -->
+    <!-- Visitor log: email (EmailJS) + Google Sheets list. Setup: tools/visitor-log.gs -->
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
       (function () {
-        if (!window.emailjs) return;
-        emailjs.init("Uli5yDxKS6KIorOj4");
+        // Paste the Google Apps Script Web App URL here (ends with /exec). Empty = no sheet logging.
+        var SHEET_URL = "https://script.google.com/macros/s/AKfycbzLwBq9p3jLZ4yM9eOjxTPSLBUbgKvJRpqwiD_wYqtBupdoZpAqwI9Q2z9vWH19cSix/exec";
+        // Set to false to stop the per-visit emails once the sheet is running.
+        var SEND_EMAIL = true;
+
+        // Skip link-preview bots and scanners (Facebook/Meta, Microsoft Outlook/Teams/Bing).
+        var IGNORE_ORG = /facebook|meta platforms|microsoft/i;
+        var IGNORE_ASN = ["AS32934", "AS63293", "AS54115", "AS8075", "AS8068", "AS8069", "AS3598", "AS12076"];
+        var IGNORE_UA = /bot|crawl|spider|slurp|facebookexternalhit|meta-externalagent|bingpreview|headless|lighthouse/i;
+
+        if (navigator.webdriver || IGNORE_UA.test(navigator.userAgent)) return;
+        // Log once per browser session, not on every refresh.
+        try {
+          if (sessionStorage.getItem("vlog")) return;
+          sessionStorage.setItem("vlog", "1");
+        } catch (e) {}
+
         window.addEventListener("load", function () {
           fetch("https://ipapi.co/json/")
-            .then((r) => r.json())
-            .then((data) => {
-              emailjs
-                .send("service_8psw2om", "template_t0wvlxr", {
-                  browser: navigator.userAgent,
-                  os: navigator.platform,
-                  time: new Date().toLocaleString(),
-                  ip: data.ip,
-                  city: data.city,
-                  region: data.region,
-                  country: data.country_name,
-                  isp: data.org,
-                })
-                .catch(() => {});
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+              var org = data.org || "";
+              if (IGNORE_ORG.test(org) || IGNORE_ASN.indexOf(data.asn) !== -1) return;
+
+              var visit = {
+                ip: data.ip,
+                city: data.city,
+                region: data.region,
+                country: data.country_name,
+                isp: org,
+                asn: data.asn,
+                referrer: document.referrer || "(direct)",
+                page: location.pathname + location.hash,
+                browser: navigator.userAgent,
+                platform: navigator.platform,
+                language: navigator.language,
+                screen: screen.width + "x" + screen.height,
+              };
+
+              if (SHEET_URL) {
+                fetch(SHEET_URL, {
+                  method: "POST",
+                  mode: "no-cors",
+                  keepalive: true,
+                  headers: { "Content-Type": "text/plain;charset=utf-8" },
+                  body: JSON.stringify(visit),
+                }).catch(function () {});
+              }
+
+              if (SEND_EMAIL && window.emailjs) {
+                emailjs.init("Uli5yDxKS6KIorOj4");
+                emailjs
+                  .send("service_8psw2om", "template_t0wvlxr", {
+                    browser: visit.browser,
+                    os: visit.platform,
+                    time: new Date().toLocaleString(),
+                    ip: visit.ip,
+                    city: visit.city,
+                    region: visit.region,
+                    country: visit.country,
+                    isp: visit.isp,
+                  })
+                  .catch(function () {});
+              }
             })
-            .catch(() => {});
+            .catch(function () {});
         });
       })();
     </script>
