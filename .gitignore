@@ -1,1 +1,21 @@
+# Dependencies
 node_modules/
+
+# Markdown: only README files are published
+*.md
+!README.md
+
+# AI assistant / agent files (kept local, never published)
+.claude/
+.cursor/
+.aider*
+.codegpt/
+CLAUDE.md
+AGENTS.md
+GEMINI.md
+.github/copilot-instructions.md
+*.prompt.md
+
+# OS files
+.DS_Store
+Thumbs.db
