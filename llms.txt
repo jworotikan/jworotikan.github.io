@@ -1,0 +1,57 @@
+# Jonathan Worotikan
+
+> Jonathan Worotikan (full name Jonathan Wisnu P. Worotikan) is a Software Engineer and IT Manager based in Bogor, West Java, Indonesia. He has been writing code professionally since 2010 (15+ years) and builds enterprise software, Odoo ERP modules, cloud infrastructure and 3D Virtual Tour platforms for Indonesian government institutions. He is open to freelance projects, IT consulting and engineering leadership roles.
+
+Website: https://jworotikan.github.io/
+Last updated: 2026-11-10
+
+## Key facts
+
+- Current role: IT Manager & Operations Manager at PT. Teknologi GoVirtual Indonesia (Oct 2025 – present), reporting to the CEO.
+- Location: Bogor, West Java, Indonesia. Works with clients in Jakarta and across Indonesia.
+- Experience: 15+ years, since 2010.
+- Live platforms: 6 government and national platforms, including Portal Eksplorasi Indonesia with Bappenas.
+- Certifications: 7 Dicoding certificates (AWS Cloud Practitioner, Dasar DevOps, Back-End Development, JavaScript Fundamentals, Front-End Web, Web Programming, Java for Beginners).
+- Education: Bachelor of Information Systems, Universitas Terbuka (2024 – present).
+- Languages: Indonesian (native), English (professional working proficiency).
+
+## Services
+
+- 3D Virtual Tour platforms: end-to-end development for government clients, including production-to-live server migration.
+- Custom software & Odoo: web applications and Odoo modules for permits, HRIS, project management, surveys and reporting.
+- Backend & DevOps: Laravel, Python and Node.js back-ends on MySQL, PostgreSQL, Linux, Docker and AWS.
+- Web & mobile applications: responsive web apps and cross-platform React Native apps.
+
+## Tech stack
+
+- Languages: PHP, Python, JavaScript, Node.js, VB.Net
+- Frameworks: Laravel, Odoo, Express.js, React Native
+- Frontend: HTML5, CSS3, Tailwind CSS, XML, Pano2VR
+- Databases: PostgreSQL, MySQL, Firebase
+- Cloud & server: AWS, Linux / CentOS, Docker, cPanel, Git
+- AI workflow: Claude Code, AI-assisted code review, rapid prototyping
+
+## Experience
+
+- Oct 2025 – present: IT Manager & Operations Manager, PT. Teknologi GoVirtual Indonesia (Jakarta)
+- Apr 2024 – Jul 2025: IT Officer & Programmer, Living World Grand Wisata (Bekasi)
+- Jun 2017 – Jan 2024: IT Manager & Software Engineer, PT. I-Management Indonesia (Jakarta). Clients: Bank Mayora, Wilmar Group, Mayapada Bank, Bank Papua; built rekap.kemdikbud.go.id for the Ministry of Education.
+- Jun 2018 – Mar 2024: IT Programmer, PT. Inter Pan Pasifik Futures (Jakarta). Delivered volksfx.com and fxinterpan.com.
+- Jun 2016 – Dec 2016: PIC Sales & Marketing, Bogor Region, X-TRO (XL Axiata)
+- Jul 2010 – Jun 2016: Network & Software Engineer, CV. Withtech (Bogor)
+
+## Government and national platforms
+
+- [Portal Eksplorasi Indonesia (with Bappenas)](https://exploreindonesia.govirtual.id)
+- [Kota Semarang Virtual Tour](https://virtualtour.semarang.go.id)
+- [DKI Jakarta: Enjoy Jakarta Virtual Tour](https://enjoy.jakarta.go.id/virtualtour)
+- [Kabupaten Lampung Selatan](https://lampung-selatan.go.id)
+- [Kabupaten Lahat](https://lahat.govirtual.id)
+- [GoVirtual Indonesia](https://govirtual.id)
+
+## Contact
+
+- Email: jonathan.worotikan@gmail.com
+- WhatsApp: +62 878-804-99699
+- LinkedIn: https://www.linkedin.com/in/jworotikan
+- Resume (PDF): https://jworotikan.github.io/resume/Jonathan_Worotikan_2026.pdf

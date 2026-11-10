@@ -28,9 +28,9 @@ function doPost(e) {
     const row = [Utilities.formatDate(new Date(), TIMEZONE, "yyyy-MM-dd HH:mm:ss")].concat(
       FIELDS.map(function (k) { return clean_(data[k]); })
     );
-    // newest first, right under the header
+    // newest first, right under the header (reset the style it inherits from the header)
     sheet.insertRowAfter(1);
-    sheet.getRange(2, 1, 1, row.length).setValues([row]);
+    styleBody_(sheet.getRange(2, 1, 1, HEADERS.length)).setValues([row]);
     return ContentService.createTextOutput("ok");
   } catch (err) {
     return ContentService.createTextOutput("error");
@@ -45,10 +45,33 @@ function getSheet_() {
   if (!sheet) sheet = ss.insertSheet(SHEET_NAME);
   if (sheet.getLastRow() === 0) {
     sheet.appendRow(HEADERS);
-    sheet.setFrozenRows(1);
-    sheet.getRange(1, 1, 1, HEADERS.length).setFontWeight("bold").setBackground("#0b111b").setFontColor("#ffffff");
+    styleHeader_(sheet);
   }
   return sheet;
+}
+
+function styleHeader_(sheet) {
+  sheet.setFrozenRows(1);
+  sheet
+    .getRange(1, 1, 1, HEADERS.length)
+    .setFontWeight("bold")
+    .setBackground("#e8f0fe")
+    .setFontColor("#1f3b63");
+}
+
+function styleBody_(range) {
+  return range.setFontWeight("normal").setBackground(null).setFontColor("#202124");
+}
+
+/**
+ * Run once from the Apps Script editor (select "fixStyle" → Run)
+ * to restyle the header and clear the black style from existing rows.
+ */
+function fixStyle() {
+  const sheet = getSheet_();
+  styleHeader_(sheet);
+  const rows = sheet.getMaxRows() - 1;
+  if (rows > 0) styleBody_(sheet.getRange(2, 1, rows, HEADERS.length));
 }
 
 // Trim long values and neutralise spreadsheet formulas sent by a malicious visitor.

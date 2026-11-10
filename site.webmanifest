@@ -1,0 +1,16 @@
+{
+  "name": "Jonathan Worotikan — Software Engineer",
+  "short_name": "J. Worotikan",
+  "description": "Software Engineer in Bogor, Indonesia. Laravel, Odoo, Node.js, AWS and 3D Virtual Tour platforms.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0c121c",
+  "theme_color": "#0c121c",
+  "lang": "en",
+  "icons": [
+    { "src": "/assets/img/favicon/android-icon-144x144.png", "sizes": "144x144", "type": "image/png" },
+    { "src": "/assets/img/favicon/android-icon-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/img/favicon/ms-icon-310x310.png", "sizes": "310x310", "type": "image/png" }
+  ]
+}

@@ -1,0 +1,34 @@
+# https://jworotikan.github.io/robots.txt
+User-agent: *
+Allow: /
+Disallow: /index_old.html
+Disallow: /index_v2.html
+Disallow: /index%20copy.html
+Disallow: /index%20copy%202.html
+
+# AI / answer-engine crawlers are welcome (GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://jworotikan.github.io/sitemap.xml
