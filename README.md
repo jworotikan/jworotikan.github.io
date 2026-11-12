@@ -9,7 +9,7 @@ Building enterprise software, government platforms and cloud infrastructure for 
 [![Website](https://img.shields.io/badge/Website-jworotikan.github.io-0b5cc4?style=flat-square)](https://jworotikan.github.io)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-jworotikan-0a66c2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jworotikan)
 [![Email](https://img.shields.io/badge/Email-jonathan.worotikan%40gmail.com-0b111b?style=flat-square&logo=gmail&logoColor=white)](mailto:jonathan.worotikan@gmail.com)
-[![Resume](https://img.shields.io/badge/Resume-PDF-34d399?style=flat-square)](https://jworotikan.github.io/resume/Jonathan_Worotikan_2026.pdf)
+[![Resume](https://img.shields.io/badge/Resume-PDF-34d399?style=flat-square)](https://jworotikan.github.io/resume/Jonathan_Worotikan_CV_2026.pdf)
 
 </div>
 
@@ -29,7 +29,7 @@ Today I work at **PT. Teknologi GoVirtual Indonesia**. I lead the development of
 ## Highlights
 
 - **15+ years** building production software, since 2010.
-- **6 live platforms** for government and national institutions, including a national portal with Bappenas.
+- **Live government platforms** on official servers, including a national portal with Bappenas.
 - **Full-stack:** Laravel, Odoo, Node.js, PostgreSQL and AWS.
 - **7 verified certifications** in cloud, DevOps, back-end and web.
 
@@ -63,7 +63,7 @@ Today I work at **PT. Teknologi GoVirtual Indonesia**. I lead the development of
 | Jun 2016 – Dec 2016 | PIC Sales & Marketing, Bogor Region | X-TRO (XL Axiata) |
 | Jul 2010 – Jun 2016 | Network & Software Engineer | CV. Withtech |
 
-Clients I have delivered for include Bank Mayora, Wilmar Group, Mayapada Bank, Bank Papua and the Indonesian Ministry of Education.
+Built platforms for Kota Semarang, DKI Jakarta, Kabupaten Lampung Selatan, Kabupaten Lahat, the Ministry of Education (Kemdikbud) and Living World. Key clients at PT. I-Management included Bank Mayora, Wilmar Group, Mayapada Bank and Bank Papua.
 
 **Education:** Bachelor of Information Systems, Universitas Terbuka (2024 – present)
 
@@ -76,13 +76,17 @@ Clients I have delivered for include Bank Mayora, Wilmar Group, Mayapada Bank, B
 | DKI Jakarta: Enjoy Jakarta Virtual Tour | [enjoy.jakarta.go.id/virtualtour](https://enjoy.jakarta.go.id/virtualtour) |
 | Kabupaten Lampung Selatan | [lampung-selatan.go.id](https://lampung-selatan.go.id) |
 | Kabupaten Lahat | [lahat.govirtual.id](https://lahat.govirtual.id) |
-| GoVirtual Indonesia | [govirtual.id](https://govirtual.id) |
+| Kota Medan | [medan.govirtual.id](https://medan.govirtual.id) |
+| Kabupaten Deli Serdang | [deliserdang.govirtual.id](https://deliserdang.govirtual.id) |
+| Desa Jatiluwih, Bali | [jatiluwih.govirtual.id](https://jatiluwih.govirtual.id) |
+| RS Adhyaksa Jakarta | [rsadhyaksajakarta.govirtual.id](https://rsadhyaksajakarta.govirtual.id) |
+| Kota Bogor | [bogor.govirtual.id](https://bogor.govirtual.id) |
 
 ## Selected Work
 
-- **rekap.kemdikbud.go.id.** A full-stack data reporting system for the Ministry of Education.
+- **rekap.kemdikbud.go.id.** A full-stack data reporting system for the Ministry of Education, built as a freelance project with ACDP.
 - **HRIS & Project Management.** Attendance, leave, payroll and cross-team project tracking.
-- **e-Wallet & Odoo modules.** A cross-platform e-Wallet app, plus Odoo modules for permits, goods movement, lost & found and surveys.
+- **e-Wallet & Odoo modules.** A cross-platform e-Wallet app for PT. Inter Pan Pasifik Futures, plus Odoo modules for permits, goods movement, lost & found and surveys.
 - **Corporate websites:**
   - [Lapak Arsitek](https://lapakarsitek.com)
   - [volksfx.com](https://volksfx.com)

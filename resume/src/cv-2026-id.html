@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <title>Jonathan Worotikan — Software Engineer — CV 2026 (Bahasa Indonesia)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      @page { size: A4; margin: 0; }
+      :root {
+        --ink: #0f1b2d;
+        --text: #2a3445;
+        --muted: #5b6577;
+        --dim: #8a93a3;
+        --line: #e3e7ee;
+        --blue: #0b5cc4;
+        --blue-soft: #eef4fc;
+        --navy: #0b111b;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body { background: #e9edf2; }
+      body {
+        font-family: "Plus Jakarta Sans", "Segoe UI", Arial, sans-serif;
+        color: var(--text);
+        font-size: 9.1pt;
+        line-height: 1.45;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      a { color: inherit; text-decoration: none; }
+      .page {
+        position: relative;
+        width: 210mm;
+        height: 297mm;
+        margin: 0 auto 8mm;
+        background: #fff;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+      @media print {
+        html, body { background: #fff; }
+        .page { margin: 0; page-break-after: always; break-after: page; }
+        .page:last-child { page-break-after: auto; break-after: auto; }
+      }
+      .page::before {
+        content: "";
+        position: absolute;
+        left: 0; top: 0; bottom: 0;
+        width: 5px;
+        background: var(--blue);
+      }
+
+      /* ---------- Header ---------- */
+      .header {
+        display: flex;
+        align-items: center;
+        gap: 9mm;
+        padding: 13mm 14mm 9mm 16mm;
+      }
+      .photo {
+        flex: 0 0 auto;
+        width: 30mm;
+        height: 30mm;
+        border-radius: 7mm;
+        object-fit: cover;
+        object-position: 50% 15%;
+      }
+      .id { flex: 1; min-width: 0; }
+      .id h1 {
+        font-size: 27pt;
+        line-height: 1.05;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        color: var(--ink);
+      }
+      .id .role {
+        margin-top: 1.6mm;
+        font-size: 12pt;
+        font-weight: 700;
+        color: var(--blue);
+      }
+      .id .tag {
+        margin-top: 1mm;
+        font-size: 9.6pt;
+        color: var(--muted);
+      }
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.2mm 5mm;
+        margin-top: 3.4mm;
+        font-size: 8.6pt;
+        font-weight: 500;
+        color: var(--text);
+      }
+      .contact span { display: inline-flex; align-items: center; gap: 1.6mm; }
+      .contact svg { width: 3.3mm; height: 3.3mm; color: var(--blue); flex: 0 0 auto; }
+
+      /* ---------- Impact strip ---------- */
+      .impact {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin: 0 14mm 0 16mm;
+        background: var(--navy);
+        color: #fff;
+        border-radius: 3mm;
+      }
+      .impact div { padding: 4mm 4.5mm; }
+      .impact div + div { border-left: 1px solid rgba(255, 255, 255, 0.12); }
+      .impact strong {
+        display: block;
+        font-size: 17pt;
+        line-height: 1;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+      .impact strong em { font-style: normal; color: #8fbaff; }
+      .impact span {
+        display: block;
+        margin-top: 1.6mm;
+        font-size: 7.8pt;
+        line-height: 1.35;
+        color: rgba(255, 255, 255, 0.72);
+      }
+
+      /* ---------- Body grid ---------- */
+      .body {
+        flex: 1;
+        display: grid;
+        grid-template-columns: 1fr 58mm;
+        gap: 9mm;
+        padding: 8mm 14mm 0 16mm;
+        min-height: 0;
+      }
+      .page.p2 .body { padding-top: 13mm; }
+      h2 {
+        display: flex;
+        align-items: center;
+        gap: 2.5mm;
+        margin-bottom: 3.4mm;
+        font-size: 8.4pt;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--ink);
+      }
+      h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+      section + section { margin-top: 5.6mm; }
+
+      .summary { font-size: 9.2pt; color: var(--text); }
+      .summary b { color: var(--ink); }
+
+      /* Experience */
+      .job + .job { margin-top: 3.8mm; }
+      .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 3mm; }
+      .job h3 { font-size: 10.6pt; font-weight: 700; color: var(--ink); line-height: 1.3; }
+      .job .when { flex: 0 0 auto; font-size: 8.2pt; font-weight: 600; color: var(--blue); }
+      .job .org { font-size: 9pt; font-weight: 600; color: var(--muted); margin-top: 0.3mm; }
+      .job ul { margin-top: 1.6mm; padding-left: 4mm; }
+      .job li { margin-top: 0.7mm; padding-left: 0.6mm; }
+      .job li::marker { color: var(--blue); }
+      .job li b { color: var(--ink); font-weight: 700; }
+      .stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.2mm;
+        margin-top: 2mm;
+      }
+      .stack span {
+        padding: 0.5mm 2mm;
+        border-radius: 1.2mm;
+        background: var(--blue-soft);
+        color: var(--blue);
+        font-size: 7.4pt;
+        font-weight: 600;
+      }
+
+      /* Projects */
+      .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm 6mm; }
+      .project { min-width: 0; }
+      .project .yr { padding: 0; margin-bottom: 0.4mm; }
+      .project .yr { font-size: 8pt; font-weight: 700; color: var(--blue); padding-top: 0.4mm; }
+      .project h4 { font-size: 9.4pt; font-weight: 700; color: var(--ink); line-height: 1.35; }
+      .project p { font-size: 8.7pt; color: var(--muted); }
+
+      /* Sidebar */
+      aside section + section { margin-top: 6mm; }
+      .skills { display: grid; gap: 2.6mm; }
+      .skills h4 {
+        font-size: 7.6pt;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--dim);
+        margin-bottom: 1.1mm;
+      }
+      .chips { display: flex; flex-wrap: wrap; gap: 1.2mm; }
+      .chips span {
+        padding: 0.6mm 2mm;
+        border: 1px solid var(--line);
+        border-radius: 1.2mm;
+        font-size: 7.9pt;
+        font-weight: 600;
+        color: var(--text);
+      }
+      .list { list-style: none; display: grid; gap: 2mm; }
+      .list li { font-size: 8.8pt; line-height: 1.4; }
+      .list b { display: block; color: var(--ink); font-weight: 700; }
+      .list small { display: block; font-size: 8pt; color: var(--muted); }
+      .bullets { list-style: none; display: grid; gap: 1.4mm; }
+      .bullets li { position: relative; padding-left: 3.6mm; font-size: 8.8pt; }
+      .bullets li::before {
+        content: "";
+        position: absolute;
+        left: 0; top: 1.9mm;
+        width: 1.6mm; height: 1.6mm;
+        border-radius: 0.4mm;
+        background: var(--blue);
+      }
+      .note { margin-top: 2mm; font-size: 7.8pt; color: var(--dim); }
+
+      /* Footer */
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 14mm 0 16mm;
+        padding: 3.4mm 0 7mm;
+        border-top: 1px solid var(--line);
+        font-size: 7.6pt;
+        color: var(--dim);
+      }
+      .footer a { color: var(--blue); font-weight: 600; }
+    </style>
+  </head>
+  <body>
+    <!-- ================= HALAMAN 1 ================= -->
+    <div class="page p1">
+      <header class="header">
+        <img class="photo" src="../../assets/img/profile-img.jpg" alt="Jonathan Worotikan" />
+        <div class="id">
+          <h1>Jonathan Worotikan</h1>
+          <div class="role">Software Engineer</div>
+          <div class="tag">Software enterprise · Odoo ERP · Platform pemerintah · Infrastruktur cloud</div>
+          <div class="contact">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="https://wa.me/6287880499699">+62 878-804-99699</a></span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg><a href="mailto:jonathan.worotikan@gmail.com">jonathan.worotikan@gmail.com</a></span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><a href="https://jworotikan.github.io">jworotikan.github.io</a></span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg><a href="https://www.linkedin.com/in/jworotikan">linkedin.com/in/jworotikan</a></span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Kota Bogor, Jawa Barat</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="impact">
+        <div><strong>15<em>+</em></strong><span>tahun membangun software produksi, sejak 2010</span></div>
+        <div><strong>9<em>+</em></strong><span>platform Virtual Tour live untuk instansi pemerintah</span></div>
+        <div><strong>1</strong><span>sistem pelaporan nasional untuk Kemdikbud</span></div>
+        <div><strong>7</strong><span>sertifikasi terverifikasi: AWS, DevOps, back-end &amp; web</span></div>
+      </div>
+
+      <div class="body">
+        <main>
+          <section>
+            <h2>Profil</h2>
+            <p class="summary">
+              Software Engineer dengan pengalaman <b>15+ tahun</b> membawa sistem dari tahap kebutuhan hingga
+              produksi. Saya merancang dan membangun langsung <b>platform 3D Virtual Tour untuk instansi pemerintah Indonesia</b>,
+              membangun <b>modul Odoo ERP</b> dan aplikasi <b>Laravel</b>, serta mengelola infrastruktur Linux dan
+              cloud di baliknya, dari awal hingga go-live.
+            </p>
+          </section>
+
+          <section>
+            <h2>Pengalaman Kerja</h2>
+
+            <div class="job">
+              <div class="job-head"><h3>IT Manager &amp; Operations Manager</h3><span class="when">Okt 2025 – Sekarang</span></div>
+              <div class="org">PT. Teknologi GoVirtual Indonesia · Jakarta</div>
+              <ul>
+                <li>Merancang dan coding langsung (hands-on) platform 3D Virtual Tour yang <b>live untuk instansi pemerintah</b>: Kota Semarang, DKI Jakarta, Lampung Selatan, Kabupaten Lahat, Kota Bogor, Kota Medan, Kabupaten Deli Serdang, Desa Jatiluwih, RS Adhyaksa Jakarta dan lainnya.</li>
+                <li>Mengerjakan langsung <b>migrasi server production-to-live</b> untuk seluruh platform pemerintah.</li>
+                <li>Memimpin sekaligus aktif melakukan coding <b>Portal Eksplorasi Indonesia</b>, portal nasional yang dipesan oleh <b>Bappenas</b>, kini sudah live.</li>
+                <li>Membangun <b>HRIS</b> internal (absensi, cuti, payroll), aplikasi Project Management dan <b>aplikasi keuangan</b> perusahaan.</li>
+                <li>Melapor langsung ke CEO serta mengelola pengadaan IT (CAPEX/OPEX) dan vendor.</li>
+              </ul>
+              <div class="stack"><span>PHP</span><span>Laravel</span><span>Python</span><span>MySQL</span><span>Tailwind CSS</span><span>Pano2VR</span><span>Linux / CentOS</span><span>cPanel</span></div>
+            </div>
+
+            <div class="job">
+              <div class="job-head"><h3>IT Officer &amp; Programmer</h3><span class="when">Apr 2024 – Jul 2025</span></div>
+              <div class="org">Living World Grand Wisata · Bekasi</div>
+              <ul>
+                <li>Mengembangkan <b>modul Odoo</b> custom: Work Permit, High-Risk Permit, Goods Entry/Exit, Lost &amp; Found dan Survey Export ke Excel.</li>
+                <li>Memimpin SDLC penuh aplikasi internal: analisis kebutuhan, flowchart, desain database, pengembangan hingga go-live.</li>
+                <li>Menyiapkan infrastruktur IT mal selama masa konstruksi, termasuk koordinasi vendor dan pemasangan perangkat.</li>
+              </ul>
+              <div class="stack"><span>Odoo</span><span>Python</span><span>PostgreSQL</span></div>
+            </div>
+          </section>
+        </main>
+
+        <aside>
+          <section>
+            <h2>Keahlian</h2>
+            <div class="skills">
+              <div><h4>Bahasa Pemrograman</h4><div class="chips"><span>PHP</span><span>Python</span><span>JavaScript</span><span>Node.js</span><span>SQL</span><span>VB.Net</span></div></div>
+              <div><h4>Framework &amp; ERP</h4><div class="chips"><span>Laravel</span><span>Odoo</span><span>Express.js</span><span>React Native</span></div></div>
+              <div><h4>Web</h4><div class="chips"><span>HTML5</span><span>CSS3</span><span>Tailwind CSS</span><span>XML</span><span>Pano2VR</span></div></div>
+              <div><h4>Database</h4><div class="chips"><span>MySQL</span><span>PostgreSQL</span><span>Firebase</span></div></div>
+              <div><h4>Cloud &amp; Infrastruktur</h4><div class="chips"><span>AWS</span><span>Linux / CentOS</span><span>Docker</span><span>Git</span><span>cPanel</span><span>Migrasi Server</span><span>Jaringan</span></div></div>
+            </div>
+          </section>
+
+          <section>
+            <h2>Kekuatan</h2>
+            <ul class="bullets">
+              <li>Menangani SDLC dari awal hingga akhir</li>
+              <li>Pengembangan modul Odoo ERP</li>
+              <li>Administrasi server &amp; cloud</li>
+              <li>Transformasi digital</li>
+              <li>Manajemen IT &amp; operasional</li>
+              <li>Vendor &amp; pengadaan (CAPEX/OPEX)</li>
+              <li>Kepemimpinan &amp; mentoring tim</li>
+            </ul>
+          </section>
+        </aside>
+      </div>
+
+      <footer class="footer">
+        <span>Jonathan Worotikan · Software Engineer</span>
+        <span>Halaman 1 dari 2</span>
+      </footer>
+    </div>
+
+    <!-- ================= HALAMAN 2 ================= -->
+    <div class="page p2">
+      <div class="body">
+        <main>
+          <section>
+            <h2>Pengalaman Kerja (lanjutan)</h2>
+            <div class="job">
+              <div class="job-head"><h3>IT Manager &amp; Software Engineer</h3><span class="when">Jun 2017 – Jan 2024</span></div>
+              <div class="org">PT. I-Management Indonesia · Jakarta</div>
+              <ul>
+                <li>Memimpin transformasi digital untuk klien korporat, mengganti <b>proses berbasis kertas menjadi alur kerja digital</b>.</li>
+                <li>Membangun <b>e-Learning LMS</b> berbasis gamifikasi, portal <b>Human Capital Assessment</b> (tes psikometri) dan Class Portal interaktif berbasis game.</li>
+                <li>Mengelola kebutuhan IT pengguna internal dan klien, termasuk pengadaan dan implementasi lapangan. Klien utama: Bank Mayora, Wilmar Group, Mayapada Bank, Bank Papua dan lainnya.</li>
+              </ul>
+              <div class="stack"><span>PHP</span><span>Laravel</span><span>MySQL</span><span>JavaScript</span></div>
+            </div>
+
+            <div class="job">
+              <div class="job-head"><h3>IT Programmer</h3><span class="when">Jun 2018 – Mar 2024</span></div>
+              <div class="org">PT. Inter Pan Pasifik Futures (Interpan) · Jakarta</div>
+              <ul>
+                <li>Membangun <b>aplikasi e-Wallet</b> lintas platform untuk iOS dan Android.</li>
+                <li>Merancang dan merilis website trading <b>volksfx.com</b> dan <b>fxinterpan.com</b> dari konsep hingga deployment.</li>
+                <li>Mengelola SDLC penuh aplikasi bisnis internal dan untuk klien, dari desain database hingga produksi.</li>
+              </ul>
+              <div class="stack"><span>React Native</span><span>PHP</span><span>MySQL</span><span>JavaScript</span></div>
+            </div>
+
+            <div class="job">
+              <div class="job-head"><h3>PIC Sales &amp; Marketing, Wilayah Bogor</h3><span class="when">Jun 2016 – Des 2016</span></div>
+              <div class="org">X-TRO – XL Axiata · Bogor</div>
+              <ul>
+                <li>Memimpin <b>50 tenaga penjual</b> dan meraih <b>volume penjualan tertinggi di region dalam tiga bulan</b>.</li>
+                <li>Menangani dukungan IT dan administrasi untuk <b>XL WOW Project</b>.</li>
+              </ul>
+            </div>
+
+            <div class="job">
+              <div class="job-head"><h3>Network &amp; Software Engineer</h3><span class="when">Jul 2010 – Jun 2016</span></div>
+              <div class="org">CV. Withtech · Bogor</div>
+              <ul>
+                <li>Membangun jaringan warnet dan game center: The Train Bogor (2010), Cyber Net Bogor (2011), Emperor Yogyakarta &amp; Ambarawa (2013).</li>
+                <li>Menerapkan <b>sistem POS dan inventori</b> untuk Highland Park Resort, Toko Indo Cahaya, CV Megaria dan CV Wiyanata.</li>
+                <li>Menyiapkan infrastruktur server dan jaringan untuk PT. Sinar Gemilang (Lampung) dan Balai Pengobatan Pelangi Kasih (Bogor).</li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <h2>Proyek Freelance</h2>
+            <div class="projects">
+              <div class="project"><div><div class="yr">2017</div><h4>rekap.kemdikbud.go.id · bersama ACDP</h4><p>Sistem pelaporan data full-stack untuk Kementerian Pendidikan dan Kebudayaan (Kemdikbud).</p></div></div>
+              <div class="project"><div><div class="yr">2016</div><h4>Pemasangan Wi-Fi skala kota, Bogor</h4><p>PIC &amp; administrator untuk penerapan Wi-Fi Zoomy China.</p></div></div>
+              <div class="project"><div><div class="yr">2016</div><h4>Proyek pelatihan Bank Papua</h4><p>Administrasi dan dukungan IT untuk program pelatihan Bank Papua dari One Degree Consulting.</p></div></div>
+              <div class="project"><div><div class="yr">2015 · 2016</div><h4>Website bisnis</h4><p>fideltoys.com, jamsejahtera.com dan putikindonesiaberkarya.com.</p></div></div>
+            </div>
+          </section>
+        </main>
+
+        <aside>
+          <section>
+            <h2>Sertifikasi</h2>
+            <ul class="list">
+              <li><b>AWS Cloud Practitioner Essentials</b><small>2024</small></li>
+              <li><b>Dasar DevOps</b><small>2024</small></li>
+              <li><b>Back-End Development Fundamentals</b><small>2024</small></li>
+              <li><b>JavaScript Programming</b><small>2023</small></li>
+              <li><b>Front-End Web Fundamentals</b><small>2023</small></li>
+              <li><b>Web Programming Fundamentals</b><small>2023</small></li>
+              <li><b>Java for Beginners</b><small>2023</small></li>
+            </ul>
+            <p class="note">Diterbitkan oleh Dicoding. Link verifikasi di jworotikan.github.io</p>
+          </section>
+          <section>
+            <h2>Pendidikan</h2>
+            <ul class="list">
+              <li><b>S1 Sistem Informasi</b><small>Sedang berjalan<br />Universitas Terbuka · Okt 2024 – Sekarang</small></li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Bahasa</h2>
+            <ul class="list">
+              <li><b>Bahasa Indonesia</b><small>Bahasa ibu</small></li>
+              <li><b>Bahasa Inggris</b><small>Profesional</small></li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Lainnya</h2>
+            <ul class="bullets">
+              <li>Fotografi 360° dan udara</li>
+              <li>Pilot drone untuk pengambilan virtual tour</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Online</h2>
+            <ul class="list">
+              <li><b>Portfolio</b><small><a href="https://jworotikan.github.io">jworotikan.github.io</a></small></li>
+              <li><b>LinkedIn</b><small><a href="https://www.linkedin.com/in/jworotikan">linkedin.com/in/jworotikan</a></small></li>
+              <li><b>Hasil kerja live</b><small><a href="https://virtualtour.semarang.go.id">virtualtour.semarang.go.id</a><br /><a href="https://enjoy.jakarta.go.id/virtualtour">enjoy.jakarta.go.id/virtualtour</a><br /><a href="https://exploreindonesia.govirtual.id">exploreindonesia.govirtual.id</a></small></li>
+            </ul>
+          </section>
+        </aside>
+      </div>
+
+      <footer class="footer">
+        <span>Jonathan Worotikan · <a href="https://jworotikan.github.io">jworotikan.github.io</a></span>
+        <span>Halaman 2 dari 2</span>
+      </footer>
+    </div>
+  </body>
+</html>

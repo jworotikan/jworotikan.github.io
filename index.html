@@ -193,7 +193,11 @@
               { "@type": "ListItem", "position": 3, "name": "DKI Jakarta: Enjoy Jakarta Virtual Tour", "url": "https://enjoy.jakarta.go.id/virtualtour" },
               { "@type": "ListItem", "position": 4, "name": "Kabupaten Lampung Selatan", "url": "https://lampung-selatan.go.id" },
               { "@type": "ListItem", "position": 5, "name": "Kabupaten Lahat Virtual Tour", "url": "https://lahat.govirtual.id" },
-              { "@type": "ListItem", "position": 6, "name": "GoVirtual Indonesia", "url": "https://govirtual.id" }
+              { "@type": "ListItem", "position": 6, "name": "Kota Medan Virtual Tour", "url": "https://medan.govirtual.id" },
+              { "@type": "ListItem", "position": 7, "name": "Kabupaten Deli Serdang Virtual Tour", "url": "https://deliserdang.govirtual.id" },
+              { "@type": "ListItem", "position": 8, "name": "Desa Jatiluwih Virtual Tour", "url": "https://jatiluwih.govirtual.id" },
+              { "@type": "ListItem", "position": 9, "name": "RS Adhyaksa Jakarta Virtual Tour", "url": "https://rsadhyaksajakarta.govirtual.id" },
+              { "@type": "ListItem", "position": 10, "name": "Kota Bogor Virtual Tour", "url": "https://bogor.govirtual.id" }
             ]
           },
           {
@@ -218,7 +222,7 @@
               {
                 "@type": "Question",
                 "name": "Which government platforms has Jonathan Worotikan built?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Portal Eksplorasi Indonesia with Bappenas, the Kota Semarang Virtual Tour, the Enjoy Jakarta Virtual Tour for DKI Jakarta, Kabupaten Lampung Selatan, Kabupaten Lahat, and rekap.kemdikbud.go.id, a national reporting system for the Ministry of Education." }
+                "acceptedAnswer": { "@type": "Answer", "text": "Portal Eksplorasi Indonesia with Bappenas, and Virtual Tour platforms for Kota Semarang, DKI Jakarta (Enjoy Jakarta), Kota Medan, Kabupaten Deli Serdang, Kabupaten Lampung Selatan, Kabupaten Lahat, Kota Bogor, Desa Jatiluwih and RS Adhyaksa Jakarta. As a freelance project with ACDP he also built rekap.kemdikbud.go.id, a national reporting system for the Ministry of Education." }
               },
               {
                 "@type": "Question",
@@ -792,95 +796,238 @@
       /* About */
       .about {
         display: grid;
-        grid-template-columns: 400px 1fr;
-        gap: 72px;
-        align-items: center;
+        grid-template-columns: 280px 1fr;
+        gap: 64px;
+        align-items: start;
+      }
+      .about-card {
+        position: sticky;
+        top: 96px;
+        padding: 14px 14px 20px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #fff;
+        box-shadow: 0 24px 48px -28px rgba(15, 27, 45, 0.28);
       }
       .about-photo {
         position: relative;
+        overflow: hidden;
+        border-radius: 10px;
       }
       .about-photo img {
-        width: 100%;
-        aspect-ratio: 4 / 5;
-        object-fit: cover;
-        border-radius: var(--radius);
-        position: relative;
-        z-index: 1;
-      }
-      .about-photo::before {
-        content: "";
-        position: absolute;
-        inset: 24px -24px -24px 24px;
-        border: 2px solid var(--blue);
-        border-radius: var(--radius);
-        transition: inset 0.8s var(--ease) 0.3s;
-      }
-      .about-photo:not(.in)::before {
-        inset: 0;
-      }
-      .about-badge {
-        position: absolute;
-        z-index: 2;
-        right: -36px;
-        bottom: 40px;
-        background: #fff;
-        border-radius: var(--radius);
-        padding: 16px 20px;
-        box-shadow: 0 18px 36px -12px rgba(15, 27, 45, 0.3);
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        animation: float 5s ease-in-out infinite;
-      }
-      .about-badge strong {
         display: block;
-        font-size: 26px;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        object-position: 50% 20%;
+        transition: transform 0.8s var(--ease);
+      }
+      .about-card:hover .about-photo img {
+        transform: scale(1.04);
+      }
+      .about-since {
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        padding: 6px 11px;
+        border-radius: 999px;
+        background: rgba(12, 18, 28, 0.82);
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 12px;
+        font-weight: 600;
+      }
+      .about-since b {
+        color: #fff;
+      }
+      .about-id {
+        padding: 18px 6px 0;
+      }
+      .about-id h3 {
+        margin: 0;
+        font-size: 17px;
         font-weight: 800;
+        line-height: 1.3;
+        color: var(--ink);
+      }
+      .about-id p {
+        margin: 2px 0 12px;
+        font-size: 14px;
+        font-weight: 600;
         color: var(--blue);
-        line-height: 1;
       }
-      .about-badge span {
-        font-size: 13px;
-        color: var(--muted);
-        line-height: 1.35;
-      }
-      @keyframes float {
-        50% {
-          transform: translateY(-10px);
-        }
-      }
-      .about-text .head {
-        margin-bottom: 24px;
-      }
-      .about-text > p {
-        font-size: 16.5px;
-        color: var(--muted);
-        margin: 0 0 18px;
-      }
-      .details {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 14px 32px;
-        margin: 30px 0 34px;
-        padding: 26px 0;
-        border-top: 1px solid var(--line);
-        border-bottom: 1px solid var(--line);
-      }
-      .details div {
-        font-size: 15px;
-      }
-      .details dt {
+      .about-status {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 5px 11px;
+        border-radius: 999px;
+        background: #e9f8f1;
+        color: #0f7a52;
         font-size: 12.5px;
         font-weight: 600;
-        letter-spacing: 0.08em;
+      }
+      .about-status i {
+        position: relative;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #12b07a;
+      }
+      .about-status i::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        background: #12b07a;
+        animation: ping 2s ease-out infinite;
+      }
+      @keyframes ping {
+        to {
+          transform: scale(2.8);
+          opacity: 0;
+        }
+      }
+      .about-meta {
+        list-style: none;
+        margin: 16px 6px 18px;
+        padding: 16px 0 0;
+        border-top: 1px solid var(--line);
+        display: grid;
+        gap: 10px;
+      }
+      .about-meta li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 0;
+        font-size: 13.5px;
+        color: var(--text);
+      }
+      .about-meta i {
+        flex: 0 0 auto;
+        font-size: 17px;
+        color: var(--dim);
+      }
+      .about-meta a {
+        color: inherit;
+        text-decoration: none;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .about-meta a:hover {
+        color: var(--blue);
+      }
+      .about-cta {
+        display: flex;
+        justify-content: center;
+        margin: 0 6px;
+        padding-left: 14px;
+        padding-right: 14px;
+        white-space: nowrap;
+      }
+      .about-text .head {
+        margin-bottom: 18px;
+      }
+      .about-lead {
+        margin: 0 0 30px;
+        max-width: 620px;
+        font-size: 17.5px;
+        line-height: 1.65;
+        color: var(--muted);
+      }
+      .about-lead strong {
+        color: var(--ink);
+      }
+      .about-points {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      .about-point {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: #fff;
+        transition: border-color 0.3s, transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+      }
+      .about-point:hover {
+        border-color: rgba(11, 92, 196, 0.35);
+        transform: translateY(-3px);
+        box-shadow: 0 16px 32px -20px rgba(11, 92, 196, 0.45);
+      }
+      .about-point > i {
+        flex: 0 0 auto;
+        width: 40px;
+        height: 40px;
+        display: grid;
+        place-items: center;
+        border-radius: 10px;
+        background: var(--blue-soft);
+        color: var(--blue);
+        font-size: 20px;
+        transition: background 0.3s, color 0.3s;
+      }
+      .about-point:hover > i {
+        background: var(--blue);
+        color: #fff;
+      }
+      .about-point h4 {
+        margin: 0 0 4px;
+        font-size: 15.5px;
+        font-weight: 700;
+        color: var(--ink);
+      }
+      .about-point p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.55;
+        color: var(--muted);
+      }
+      .about-clients {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px 20px;
+        margin-top: 28px;
+        padding-top: 22px;
+        border-top: 1px solid var(--line);
+      }
+      .about-clients > span {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
         color: var(--dim);
       }
-      .details dd {
-        margin: 2px 0 0;
-        color: var(--ink);
+      .about-clients ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 20px;
+      }
+      .about-clients li {
+        font-size: 14.5px;
+        font-weight: 700;
+        color: #3d4a5e;
+        letter-spacing: -0.01em;
+      }
+      .about-clients em {
+        margin-left: 4px;
+        padding: 2px 7px;
+        border-radius: 999px;
+        background: var(--blue-soft);
+        color: var(--blue);
+        font-size: 11px;
+        font-style: normal;
         font-weight: 600;
-        word-break: break-word;
+        vertical-align: 1px;
       }
 
       /* Services */
@@ -1190,6 +1337,11 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
+      }
+      @media (min-width: 921px) {
+        .vt-grid > .vt:last-child:nth-child(3n + 1) {
+          grid-column: 1 / -1;
+        }
       }
       .vt {
         display: flex;
@@ -1591,8 +1743,8 @@
           grid-template-columns: repeat(2, 1fr);
         }
         .about {
-          grid-template-columns: 320px 1fr;
-          gap: 64px;
+          grid-template-columns: 240px 1fr;
+          gap: 44px;
         }
         .skills-wrap {
           grid-template-columns: 1fr;
@@ -1712,12 +1864,31 @@
         }
         .about {
           grid-template-columns: 1fr;
+          gap: 36px;
         }
-        .about-photo {
-          max-width: 340px;
+        .about-card {
+          position: static;
+          display: grid;
+          grid-template-columns: 104px 1fr;
+          gap: 0 18px;
+          align-items: center;
+          padding: 14px;
         }
-        .about-badge {
-          right: -20px;
+        .about-since {
+          display: none;
+        }
+        .about-id {
+          padding: 0;
+        }
+        .about-meta,
+        .about-cta {
+          grid-column: 1 / -1;
+        }
+        .about-meta {
+          margin: 16px 0;
+        }
+        .about-cta {
+          margin: 0;
         }
         .vt-grid,
         .projects {
@@ -1781,13 +1952,15 @@
           grid-template-columns: 1fr;
           gap: 10px;
         }
-        .about-photo::before {
-          inset: 16px -12px -16px 16px;
+        .about-points {
+          grid-template-columns: 1fr;
         }
-        .about-badge {
-          right: -8px;
-          bottom: 24px;
-          padding: 12px 16px;
+        .about-card {
+          grid-template-columns: 84px 1fr;
+          gap: 0 14px;
+        }
+        .about-lead {
+          font-size: 16.5px;
         }
         .c-card .arr {
           display: none;
@@ -1853,7 +2026,7 @@
             and 3D Virtual Tour platforms.
           </p>
           <div class="hero-actions">
-            <a href="resume/Jonathan_Worotikan_2026.pdf" target="_blank" rel="noopener" class="btn btn-blue magnetic"
+            <a href="resume/Jonathan_Worotikan_CV_2026.pdf" target="_blank" rel="noopener" class="btn btn-blue magnetic"
               ><i class="bx bx-download"></i> Download Resume</a
             >
             <a href="#portfolio" class="btn btn-line-light magnetic">View Portfolio</a>
@@ -1889,7 +2062,7 @@
           </div>
           <div class="hl">
             <i class="bx bx-buildings"></i>
-            <div><strong><span data-count="4">4</span> Platforms</strong><span>Live on Indonesian government servers</span></div>
+            <div><strong><span data-count="9">9</span>+ Platforms</strong><span>Government Virtual Tours, live</span></div>
           </div>
           <div class="hl">
             <i class="bx bx-layer"></i>
@@ -1907,42 +2080,83 @@
       <!-- ───────── ABOUT ───────── -->
       <section class="section" id="about">
         <div class="container about">
-          <div class="about-photo reveal">
-            <img src="assets/img/profile-img.webp" alt="Portrait of Jonathan Worotikan, Software Engineer in Bogor, Indonesia" width="600" height="600" loading="lazy" decoding="async" />
-            <div class="about-badge">
-              <span>Writing code<br />professionally since</span>
-              <strong>2010</strong>
+          <aside class="about-card reveal">
+            <div class="about-photo">
+              <img src="assets/img/profile-img.webp" alt="Portrait of Jonathan Worotikan, Software Engineer in Bogor, Indonesia" width="600" height="600" loading="lazy" decoding="async" />
+              <span class="about-since">Coding since <b>2010</b></span>
             </div>
-          </div>
+            <div class="about-id">
+              <h3>Jonathan Wisnu P. Worotikan</h3>
+              <p>Software Engineer</p>
+              <span class="about-status"><i></i>Available for freelance</span>
+            </div>
+            <ul class="about-meta">
+              <li><i class="bx bx-map"></i>Kota Bogor, Indonesia</li>
+              <li><i class="bx bx-envelope"></i><a href="mailto:jonathan.worotikan@gmail.com">jonathan.worotikan@gmail.com</a></li>
+              <li><i class="bx bx-globe"></i>Bahasa Indonesia · English</li>
+            </ul>
+            <a href="resume/Jonathan_Worotikan_CV_2026.pdf" target="_blank" rel="noopener" class="btn btn-dark about-cta"
+              ><i class="bx bx-file"></i> Download Resume</a
+            >
+          </aside>
+
           <div class="about-text reveal" style="--d: 0.15s">
             <div class="head">
               <span class="kicker"><b>01</b> About Me</span>
-              <h2>Over a decade of building software that works in production.</h2>
+              <h2>15 years of building software that works in production.</h2>
             </div>
-            <p>
-              I started my career in 2010 as a network and software engineer and
-              grew into a full-stack developer, delivering ERP modules, fintech
-              and e-learning applications, and a national reporting system for
-              the Ministry of Education.
+            <p class="about-lead">
+              I started in 2010 as a network engineer and grew into a full-stack developer. Today I lead
+              development at <strong>PT. Teknologi GoVirtual Indonesia</strong>, and I still write the code.
             </p>
-            <p>
-              Today I work at
-              <strong>PT. Teknologi GoVirtual Indonesia</strong>, where I lead the
-              development of immersive 3D Virtual Tour platforms deployed on
-              official government servers and stay hands-on with code,
-              infrastructure and delivery.
-            </p>
-            <dl class="details">
-              <div><dt>Full name</dt><dd>Jonathan Wisnu P. Worotikan</dd></div>
-              <div><dt>Location</dt><dd>Kota Bogor, Indonesia</dd></div>
-              <div><dt>Email</dt><dd>jonathan.worotikan@gmail.com</dd></div>
-              <div><dt>Freelance</dt><dd>Available</dd></div>
-            </dl>
-            <div class="hero-actions" style="margin: 0">
-              <a href="resume/Jonathan_Worotikan_2026.pdf" target="_blank" rel="noopener" class="btn btn-dark"
-                ><i class="bx bx-file"></i> Download Resume</a
-              >
-              <a href="#contact" class="btn btn-line">Get in Touch</a>
+
+            <div class="about-points stagger">
+              <div class="about-point reveal">
+                <i class="bx bx-buildings"></i>
+                <div>
+                  <h4>Government-grade delivery</h4>
+                  <p>Virtual Tour platforms live on official government servers, plus a national portal for Bappenas.</p>
+                </div>
+              </div>
+              <div class="about-point reveal">
+                <i class="bx bx-layer"></i>
+                <div>
+                  <h4>Enterprise &amp; ERP systems</h4>
+                  <p>Odoo modules, HRIS, e-Learning and assessment platforms, and a fintech e-Wallet app.</p>
+                </div>
+              </div>
+              <div class="about-point reveal">
+                <i class="bx bx-code-block"></i>
+                <div>
+                  <h4>Hands-on lead</h4>
+                  <p>Reporting to the CEO on delivery, while staying in the codebase every day.</p>
+                </div>
+              </div>
+              <div class="about-point reveal">
+                <i class="bx bx-server"></i>
+                <div>
+                  <h4>Server to screen</h4>
+                  <p>Linux, Docker, AWS and server migration through to responsive front-ends.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-clients">
+              <span>Platforms built for</span>
+              <ul>
+                <li>Kota Semarang</li>
+                <li>DKI Jakarta</li>
+                <li>Kota Medan</li>
+                <li>Deli Serdang</li>
+                <li>Lampung Selatan</li>
+                <li>Kabupaten Lahat</li>
+                <li>Kota Bogor</li>
+                <li>Desa Jatiluwih</li>
+                <li>RS Adhyaksa</li>
+                <li>Kemdikbud</li>
+                <li>Living World</li>
+                <li>Bappenas</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -2130,7 +2344,7 @@
                   <li>Direct end-to-end development of 3D Virtual Tour platforms deployed on official government servers.</li>
                   <li>Managed full production-to-live server migration for all government platforms.</li>
                   <li>Engineered the internal HRIS (attendance, leave, payroll) and Project Management System.</li>
-                  <li>Developing Portal Eksplorasi Indonesia in collaboration with Bappenas.</li>
+                  <li>Built Portal Eksplorasi Indonesia, a national portal commissioned by Bappenas, now live.</li>
                 </ul>
                 <div class="tags"><span class="tag">Laravel</span><span class="tag">Tailwind</span><span class="tag">MySQL</span><span class="tag">Linux</span><span class="tag">Pano2VR</span></div>
               </div>
@@ -2156,8 +2370,6 @@
                 <ul>
                   <li>Led digital transformation for corporate clients, converting paper-based processes into digital workflows.</li>
                   <li>Engineered an e-Learning platform, psychometric Human Capital Assessment and Interactive Class Portal.</li>
-                  <li>Built rekap.kemdikbud.go.id, a full-stack reporting system for the Ministry of Education.</li>
-                  <li>Developed a cross-platform e-Wallet application for iOS and Android.</li>
                   <li>Clients: Bank Mayora, Wilmar Group, Mayapada Bank and Bank Papua.</li>
                 </ul>
                 <div class="tags"><span class="tag">PHP</span><span class="tag">Laravel</span><span class="tag">React Native</span><span class="tag">MySQL</span></div>
@@ -2171,6 +2383,7 @@
                 <ul>
                   <li>Designed and maintained trading platform websites and business applications.</li>
                   <li>Delivered volksfx.com and fxinterpan.com from concept to deployment.</li>
+                  <li>Developed a cross-platform e-Wallet application for iOS and Android.</li>
                 </ul>
               </div>
             </div>
@@ -2221,7 +2434,7 @@
           <div class="head center reveal">
             <span class="kicker"><b>05</b> Government Projects</span>
             <h2>Virtual Tour platforms</h2>
-            <p>Immersive 3D platforms built and deployed on official Indonesian government servers.</p>
+            <p>Immersive 3D platforms built and deployed for Indonesian government institutions, cities and regencies.</p>
           </div>
           <div class="vt-grid stagger">
             <a class="vt tilt reveal" href="https://virtualtour.semarang.go.id" target="_blank" rel="noopener">
@@ -2248,11 +2461,35 @@
               <p>3D virtual tour platform for Kabupaten Lahat on GoVirtual infrastructure.</p>
               <div class="url">lahat.govirtual.id</div>
             </a>
-            <a class="vt tilt reveal" href="https://govirtual.id" target="_blank" rel="noopener">
+            <a class="vt tilt reveal" href="https://medan.govirtual.id" target="_blank" rel="noopener">
               <div class="vt-top"><span class="vt-status">Live</span><i class="bx bx-link-external"></i></div>
-              <h3>GoVirtual Indonesia</h3>
-              <p>Company website and showcase for GoVirtual's digital solutions.</p>
-              <div class="url">govirtual.id</div>
+              <h3>Kota Medan</h3>
+              <p>3D virtual tour platform for the City of Medan government.</p>
+              <div class="url">medan.govirtual.id</div>
+            </a>
+            <a class="vt tilt reveal" href="https://deliserdang.govirtual.id" target="_blank" rel="noopener">
+              <div class="vt-top"><span class="vt-status">Live</span><i class="bx bx-link-external"></i></div>
+              <h3>Kabupaten Deli Serdang</h3>
+              <p>3D virtual tour platform for the Deli Serdang regency in North Sumatra.</p>
+              <div class="url">deliserdang.govirtual.id</div>
+            </a>
+            <a class="vt tilt reveal" href="https://jatiluwih.govirtual.id" target="_blank" rel="noopener">
+              <div class="vt-top"><span class="vt-status">Live</span><i class="bx bx-link-external"></i></div>
+              <h3>Desa Jatiluwih</h3>
+              <p>Virtual tour of Jatiluwih village in Bali and its UNESCO-listed rice terraces.</p>
+              <div class="url">jatiluwih.govirtual.id</div>
+            </a>
+            <a class="vt tilt reveal" href="https://rsadhyaksajakarta.govirtual.id" target="_blank" rel="noopener">
+              <div class="vt-top"><span class="vt-status">Live</span><i class="bx bx-link-external"></i></div>
+              <h3>RS Adhyaksa Jakarta</h3>
+              <p>3D virtual tour for Rumah Sakit Adhyaksa Jakarta.</p>
+              <div class="url">rsadhyaksajakarta.govirtual.id</div>
+            </a>
+            <a class="vt tilt reveal" href="https://bogor.govirtual.id" target="_blank" rel="noopener">
+              <div class="vt-top"><span class="vt-status">Live</span><i class="bx bx-link-external"></i></div>
+              <h3>Kota Bogor</h3>
+              <p>3D virtual tour platform for the City of Bogor.</p>
+              <div class="url">bogor.govirtual.id</div>
             </a>
             <a class="vt tilt reveal" href="https://exploreindonesia.govirtual.id" target="_blank" rel="noopener">
               <div class="vt-top"><span class="vt-status">Live</span><i class="bx bx-link-external"></i></div>
@@ -2329,9 +2566,9 @@
             <div class="project text-only tilt reveal">
               <div class="project-body">
                 <i class="bx bx-bar-chart-alt-2 p-ico"></i>
-                <div class="project-cat">Government</div>
+                <div class="project-cat">Government · Freelance</div>
                 <h3>rekap.kemdikbud.go.id</h3>
-                <p>Full-stack data reporting system for the Ministry of Education.</p>
+                <p>Freelance project with ACDP: a full-stack data reporting system for the Ministry of Education.</p>
                 <div class="tags"><span class="tag">PHP</span><span class="tag">MySQL</span></div>
               </div>
             </div>
@@ -2394,9 +2631,7 @@
             <article class="faq-item reveal">
               <h3><i class="bx bx-buildings" aria-hidden="true"></i>Which government platforms has Jonathan Worotikan built?</h3>
               <p>
-                Portal Eksplorasi Indonesia with Bappenas, the Kota Semarang Virtual Tour, the Enjoy Jakarta Virtual
-                Tour for DKI Jakarta, Kabupaten Lampung Selatan, Kabupaten Lahat, and rekap.kemdikbud.go.id, a national
-                reporting system for the Ministry of Education.
+                Portal Eksplorasi Indonesia with Bappenas, and Virtual Tour platforms for Kota Semarang, DKI Jakarta (Enjoy Jakarta), Kota Medan, Kabupaten Deli Serdang, Kabupaten Lampung Selatan, Kabupaten Lahat, Kota Bogor, Desa Jatiluwih and RS Adhyaksa Jakarta. As a freelance project with ACDP he also built rekap.kemdikbud.go.id, a national reporting system for the Ministry of Education.
               </p>
             </article>
             <article class="faq-item reveal">
@@ -2431,7 +2666,7 @@
             </p>
             <div class="hero-actions" style="margin: 0">
               <a href="mailto:jonathan.worotikan@gmail.com" class="btn btn-blue magnetic"><i class="bx bx-envelope"></i> Send Email</a>
-              <a href="resume/Jonathan_Worotikan_2026.pdf" target="_blank" rel="noopener" class="btn btn-line-light magnetic">Download Resume</a>
+              <a href="resume/Jonathan_Worotikan_CV_2026.pdf" target="_blank" rel="noopener" class="btn btn-line-light magnetic">Download Resume</a>
             </div>
           </div>
           <div class="contact-cards stagger">
