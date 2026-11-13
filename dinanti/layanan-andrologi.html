@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Klinik Andrologi & Kesehatan Pria — Klinik Fertilitas Dinanti</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/v2.css">
+</head>
+<body data-page="layanan" data-wa-context="andrologi">
+  <div id="site-header"></div>
+
+  <section class="page-hero">
+    <div class="container split">
+      <div>
+        <div class="breadcrumb"><a href="index.html">Beranda</a> / <a href="layanan.html">Layanan</a> / <span>Klinik Andrologi</span></div>
+        <span class="eyebrow sage">Klinik Andrologi Pria</span>
+        <h1>Memeriksakan Sperma adalah Tanda Cinta &amp; Tanggung Jawab Suami</h1>
+        <p class="lead">Hampir separuh kendala kehamilan berkaitan dengan kualitas sperma. Di Dinanti, Ayah diperiksa dengan martabat, privasi penuh, dan oleh dokter spesialis andrologi.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn btn-primary" data-book data-doctor="christian" data-service="Skrining Sperma / Andrologi">Jadwalkan dengan dr. Christian, Sp.And</button>
+          <button class="btn btn-ghost" data-wa data-waicon>Tanya via WhatsApp</button>
+        </div>
+      </div>
+      <div class="media" data-scene="clinic" data-label="Foto dummy: Konsultasi andrologi" data-lock="41"></div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="callout">
+        <span class="ci" data-ic="lock"></span>
+        <div><h3>Private Semen Collection Lounge</h3>
+          <p>Ruang khusus yang terisolasi dari ruang tunggu umum: pintu ganda kedap suara, pendingin udara, hiburan audio-visual higienis, dan loket penyerahan sampel yang langsung terhubung ke laboratorium — tanpa perlu membawa sampel melewati area publik.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">Layanan Andrologi</span><h2>Diagnosis &amp; Terapi Kesehatan Sperma</h2></div>
+      <div class="grid-3">
+        <div class="card hover"><div class="card-icon sage" data-ic="microscope"></div><h3>Analisa Sperma CASA</h3><p>Evaluasi konsentrasi, motilitas, dan morfologi sperma berbantuan komputer sesuai standar WHO.</p></div>
+        <div class="card hover"><div class="card-icon" data-ic="dna"></div><h3>Tes Fragmentasi DNA (DFI)</h3><p>Mengukur kerusakan DNA sperma — penting untuk kasus keguguran berulang atau gagal program.</p></div>
+        <div class="card hover"><div class="card-icon gold" data-ic="stethoscope"></div><h3>Penanganan Varikokel</h3><p>Diagnosis dan terapi pelebaran vena skrotum yang dapat menurunkan kualitas sperma.</p></div>
+        <div class="card hover"><div class="card-icon" data-ic="scissors"></div><h3>PESA / TESA / Micro-TESE</h3><p>Pengambilan sperma langsung dari testis untuk kasus azoospermia.</p></div>
+        <div class="card hover"><div class="card-icon sage" data-ic="snow"></div><h3>Sperm Freezing</h3><p>Pembekuan sperma sebelum terapi medis atau untuk persiapan program.</p></div>
+        <div class="card hover"><div class="card-icon gold" data-ic="leaf"></div><h3>Konsultasi Gaya Hidup Pria</h3><p>Nutrisi, olahraga, dan kebiasaan yang memengaruhi kesuburan pria.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow sage">Dokter Andrologi</span><h2>Jadwal Praktik</h2></div>
+      <div style="max-width:380px;margin:0 auto" id="androDoc"></div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const d = DINANTI.doctors.find((x) => x.id === "christian");
+      document.getElementById("androDoc").innerHTML = doctorCard(d, { full: true });
+      document.querySelectorAll("#androDoc .reveal").forEach((e) => e.classList.add("in"));
+    });
+  </script>
+</body>
+</html>

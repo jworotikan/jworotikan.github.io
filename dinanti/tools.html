@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kalkulator Masa Subur & Kuis Skrining — Klinik Fertilitas Dinanti</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/v2.css">
+</head>
+<body data-page="edukasi" data-wa-context="default">
+  <div id="site-header"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Beranda</a> / <span>Promil Tools</span></div>
+      <span class="eyebrow sage">Promil Tools · Gratis</span>
+      <h1>Kenali Kesuburan Anda, Mulai dari Sini</h1>
+      <p class="lead">Dua alat sederhana untuk membantu Ayah &amp; Bunda memahami masa subur dan menentukan langkah awal yang paling tepat.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+        <a class="btn btn-primary btn-sm" href="#kalkulator"><i class="ico fa-regular fa-calendar"></i> Kalkulator Masa Subur</a>
+        <a class="btn btn-ghost btn-sm" href="#kuis"><i class="ico fa-solid fa-clipboard-question"></i> Kuis Skrining 1 Menit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kalkulator -->
+  <section class="section-sm" id="kalkulator" style="scroll-margin-top:90px">
+    <div class="container">
+      <div class="tool-layout">
+        <form class="tool-panel" id="calcForm">
+          <h3>Kalkulator Masa Subur &amp; Ovulasi</h3>
+          <p class="muted" style="font-size:14px">Masukkan data siklus Bunda untuk melihat kalender masa subur.</p>
+          <div class="stack">
+            <div class="field"><label for="lmp">Hari Pertama Haid Terakhir (HPHT)</label><input class="input" type="date" id="lmp" name="lmp" required></div>
+            <div class="field"><label>Rata-rata panjang siklus</label>
+              <div class="range-row"><input type="range" name="cycle" min="21" max="40" value="28"><span class="range-val" id="cycleVal">28 hari</span></div>
+              <span class="hint">Normal: 21–35 hari. Hitung dari hari pertama haid ke hari pertama haid berikutnya.</span></div>
+            <div class="field"><label>Fase luteal <span class="muted" style="font-weight:500">(opsional)</span></label>
+              <div class="range-row"><input type="range" name="luteal" min="10" max="16" value="14"><span class="range-val" id="lutealVal">14 hari</span></div>
+              <span class="hint">Biarkan 14 hari jika tidak tahu.</span></div>
+            <button class="btn btn-primary btn-block" type="submit">Hitung Masa Subur</button>
+          </div>
+        </form>
+        <div class="tool-panel" id="calcOut">
+          <div class="empty-state"><i class="ico fa-regular fa-calendar"></i>Hasil kalender akan tampil di sini.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kuis -->
+  <section class="section" id="kuis" style="scroll-margin-top:90px">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">Kuis Skrining Mandiri</span><h2>Potensi Kesuburan Berdua dalam 1 Menit</h2><p>Jawab 5 pertanyaan singkat dan dapatkan rekomendasi langkah awal yang dipersonalisasi.</p></div>
+      <div class="quiz" id="quizRoot"></div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

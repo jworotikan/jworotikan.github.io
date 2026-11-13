@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tim Dokter & Jadwal Praktik — Klinik Fertilitas Dinanti</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/v2.css">
+</head>
+<body data-page="dokter" data-wa-context="dokter">
+  <div id="site-header"></div>
+
+  <section class="page-hero compact">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Beranda</a> / <span>Tim Dokter</span></div>
+      <h1>Jadwal Dokter</h1>
+      <p class="lead">Pilih dokter dan jadwal yang nyaman untuk Anda.</p>
+    </div>
+  </section>
+
+  <section style="padding-bottom:40px">
+    <div class="container">
+      <div class="dir-bar">
+        <div class="poli-scroll" id="poliFilter"></div>
+        <div class="dir-tools">
+          <label class="day-select"><i class="ico fa-regular fa-calendar"></i><select class="select" id="dayFilter" aria-label="Hari praktik"></select></label>
+          <div class="view-toggle"><button data-view="card" class="active" aria-label="Tampilan kartu"><i class="fa-solid fa-grip"></i></button><button data-view="table" aria-label="Tampilan tabel"><i class="fa-solid fa-table-list"></i></button></div>
+        </div>
+      </div>
+      <div class="result-count" id="resultCount"></div>
+      <div class="doc-grid" id="doctorGrid"></div>
+      <div id="tableView" hidden></div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="callout">
+        <span class="ci" data-ic="chat"></span>
+        <div style="flex:1">
+          <h3>Bingung pilih dokter?</h3>
+          <p>Careline kami bantu arahkan, gratis.</p>
+        </div>
+        <button class="btn btn-wa" data-wa data-waicon>Tanya Careline</button>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
