@@ -1,0 +1,250 @@
+/* =========================================================
+   Dinanti V2 — Lightweight FX
+   Rules: animate only transform & opacity, run once on view,
+   infinite loops pause when off-screen (.paused).
+   ========================================================= */
+html, body { overflow-x: clip; }
+.paused, .paused * { animation-play-state: paused !important; }
+
+/* ---------- Reveal primitives (only hidden once JS is ready) ---------- */
+.fx-ready .fx-up, .fx-ready .fx-pop, .fx-ready .fx-left, .fx-ready .fx-scale, .fx-ready .fx-stagger > * {
+  opacity: 0; transition: opacity .7s ease, transform .8s cubic-bezier(.2,.7,.2,1);
+}
+.fx-ready .fx-up { transform: translateY(32px); }
+.fx-ready .fx-pop { transform: translateY(30px) scale(.94); }
+.fx-ready .fx-left { transform: translateX(-30px); }
+.fx-ready .fx-scale { transform: scale(.94); }
+.fx-ready .fx-stagger > * { transform: translateY(36px); }
+.fx-up.is-in, .fx-pop.is-in, .fx-left.is-in, .fx-scale.is-in, .fx-stagger.is-in > * { opacity: 1 !important; transform: none !important; }
+.fx-ready .fx-clip { clip-path: inset(0 0 100% 0 round 16px); transition: clip-path 1s cubic-bezier(.2,.7,.2,1); }
+.fx-clip.is-in { clip-path: inset(0 0 0 0 round 16px); }
+.tick-list .fx-left:nth-child(2) { transition-delay: .08s; }
+.tick-list .fx-left:nth-child(3) { transition-delay: .16s; }
+.tick-list .fx-left:nth-child(4) { transition-delay: .24s; }
+
+/* ---------- Word split (hero + headings) ---------- */
+.w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .1em; margin-bottom: -.1em; }
+.w .c { display: inline-block; }
+.fx-ready .fx-split .c, .fx-ready .page-hero h1 .c { transform: translateY(105%); transition: transform .8s cubic-bezier(.2,.75,.2,1); transition-delay: calc(var(--i) * 55ms + .05s); }
+.fx-start .fx-split .c, .fx-start .page-hero h1 .c { transform: none; }
+.fx-ready .fx-split-scroll .c { transform: translateY(105%); transition: transform .8s cubic-bezier(.2,.75,.2,1); transition-delay: calc(var(--i) * 60ms); }
+.v2-tango.is-in .fx-split-scroll .c { transform: none; }
+
+/* ---------- Buttons: shine on hover only ---------- */
+.fx-shine { position: relative; overflow: hidden; }
+.fx-shine::after { content: ""; position: absolute; top: 0; left: 0; width: 40%; height: 100%; background: linear-gradient(110deg, transparent, rgba(255,255,255,.5), transparent); transform: translateX(-160%) skewX(-20deg); transition: transform .7s ease; pointer-events: none; }
+.fx-shine:hover::after { transform: translateX(320%) skewX(-20deg); }
+.fx-magnet { transition: transform .25s ease; }
+.fx-magnet:hover { transform: translateY(-2px); }
+.fx-beat { display: inline-block; animation: fxBeat 1.8s ease-in-out infinite; }
+@keyframes fxBeat { 0%,100% { transform: scale(1); } 15% { transform: scale(1.15); } 30% { transform: scale(1); } 45% { transform: scale(1.1); } }
+
+/* ---------- Hero ---------- */
+.v2-hero { position: relative; min-height: min(760px, calc(100vh - 110px)); display: flex; align-items: flex-end; overflow: hidden; padding-top: 40px;
+  background:
+    radial-gradient(520px 420px at 82% 8%, rgba(252, 217, 166, .55), transparent 70%),
+    radial-gradient(420px 380px at 0% 100%, rgba(207, 224, 214, .6), transparent 70%),
+    linear-gradient(180deg, #FBEDE7 0%, var(--blush) 100%); }
+.v2-hero .container { position: relative; z-index: 2; display: grid; grid-template-columns: .9fr 1.1fr; gap: 32px; align-items: end; width: 100%; }
+.v2-hero-text { padding-bottom: 100px; }
+.v2-hero h1 { font-size: clamp(38px, 5vw, 64px); line-height: 1.06; margin: 16px 0 18px; }
+.v2-hero h1 .accent { font-style: italic; color: var(--primary); }
+.v2-hero p { font-size: 17px; color: #475569; max-width: 440px; margin: 0 0 26px; }
+.v2-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.v2-proof { display: flex; align-items: center; gap: 14px; margin-top: 30px; font-size: 14px; }
+.v2-proof b { display: block; color: var(--text-strong); font-size: 15px; }
+.v2-proof small { color: var(--muted); }
+.avatars { display: flex; }
+.avatars span { position: relative; width: 40px; height: 40px; border-radius: 50%; overflow: hidden; border: 2.5px solid #fff; margin-left: -10px; background: var(--blush); }
+.avatars span:first-child { margin-left: 0; }
+.avatars .ph { position: absolute; inset: 0; } .avatars .ph-label { display: none; }
+.avatars img { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
+.avatars .more { display: grid; place-items: center; font-size: 11.5px; font-weight: 800; color: #fff; background: var(--primary); }
+
+/* hero entrance (one-shot CSS transitions) */
+.fx-ready .v2-hero .fx-in { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+.fx-start .v2-hero .fx-in { opacity: 1; transform: none; }
+.fx-start .v2-hero .fx-in[data-d="0.1"] { transition-delay: .05s; }
+.fx-start .v2-hero .fx-in[data-d="0.7"] { transition-delay: .55s; }
+.fx-start .v2-hero .fx-in[data-d="0.85"] { transition-delay: .7s; }
+.fx-start .v2-hero .fx-in[data-d="1"] { transition-delay: .85s; }
+
+.v2-team { position: relative; display: flex; align-items: flex-end; justify-content: center; height: min(540px, 66vh); }
+.v2-ring { position: absolute; left: 50%; bottom: -32%; width: 108%; aspect-ratio: 1; transform: translateX(-50%); border-radius: 50%; border: 1.5px dashed rgba(224,122,95,.35); background: radial-gradient(circle at 50% 30%, rgba(255,255,255,.8), rgba(255,255,255,0) 62%); }
+.v2-team .tm { border-color: transparent; border-bottom: 0; border-radius: 999px 999px 0 0; box-shadow: none; }
+.fx-ready .v2-team .tm { transform: translateY(102%); transition: transform 1s cubic-bezier(.2,.8,.2,1); }
+.fx-start .v2-team .tm { transform: none; }
+.fx-start .v2-team .tm-c { transition-delay: .15s; }
+.fx-start .v2-team .tm-m { transition-delay: .3s; }
+.fx-start .v2-team .tm-o { transition-delay: .45s; }
+.v2-float { position: absolute; z-index: 5; display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 16px; padding: 10px 14px; box-shadow: 0 14px 34px rgba(30,41,59,.12); font-size: 12px; color: var(--muted); line-height: 1.3; }
+.v2-float i { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; font-size: 15px; background: var(--gold-soft); color: #8a6a2c; }
+.v2-float b { display: block; font-size: 14px; color: var(--text-strong); }
+.v2-float.f1 { left: -2%; top: 22%; }
+.v2-float.f2 { right: -2%; top: 12%; }
+.v2-float.f2 i { background: #FFF4D6; color: #E0A100; }
+.v2-float.f3 { left: 2%; bottom: 12%; }
+.v2-float.f3 i { background: var(--blush); color: var(--primary-dark); }
+.fx-ready .v2-float { opacity: 0; transform: scale(.6); transition: opacity .5s ease, transform .6s cubic-bezier(.3,1.6,.5,1); }
+.fx-start .v2-float { opacity: 1; transform: none; }
+.fx-start .v2-float.f1 { transition-delay: 1s; } .fx-start .v2-float.f2 { transition-delay: 1.15s; } .fx-start .v2-float.f3 { transition-delay: 1.3s; }
+.v2-float > * { animation: fxBob 4s ease-in-out infinite; }
+.v2-float.f2 > * { animation-delay: -1.3s; } .v2-float.f3 > * { animation-delay: -2.6s; }
+@keyframes fxBob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+.v2-scroll { position: absolute; left: 50%; bottom: 22px; z-index: 6; width: 26px; height: 42px; border: 2px solid rgba(30,41,59,.35); border-radius: 14px; transform: translateX(-50%); }
+.v2-scroll span { position: absolute; left: 50%; top: 8px; width: 4px; height: 8px; margin-left: -2px; border-radius: 2px; background: var(--primary); animation: fxScroll 1.8s ease-in-out infinite; }
+@keyframes fxScroll { 0% { transform: translateY(0); opacity: 1; } 80% { transform: translateY(14px); opacity: 0; } 100% { opacity: 0; } }
+
+/* ---------- Marquee ---------- */
+.fx-marquee { position: relative; z-index: 3; overflow: hidden; background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 14px 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.fx-marquee-track { display: flex; gap: 48px; align-items: center; width: max-content; animation: fxMarquee 40s linear infinite; }
+.fx-marquee span { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; color: #475569; white-space: nowrap; letter-spacing: .01em; }
+.fx-marquee span i { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-size: 13px; background: var(--blush); color: var(--primary-dark); }
+.fx-marquee span:nth-child(3n+2) i { background: var(--sage-soft); color: var(--sage-dark); }
+.fx-marquee span:nth-child(3n) i { background: var(--gold-soft); color: #8a6a2c; }
+@keyframes fxMarquee { to { transform: translateX(-50%); } }
+
+/* ---------- Two to Tango: progress rings, play once when visible ---------- */
+.v2-tango { background: var(--bg); text-align: center; padding: 96px 0 88px; }
+.v2-tango h2 { font-size: clamp(30px, 4.2vw, 52px); font-weight: 400; margin: 14px 0 48px; }
+.v2-tango h2 em { color: var(--primary); }
+.tango-rings { display: flex; align-items: flex-start; justify-content: center; gap: 18px; }
+.tr { display: flex; flex-direction: column; align-items: center; gap: 14px; width: 170px; }
+.tr-ring { position: relative; width: 170px; height: 170px; border-radius: 50%; background: var(--surface); box-shadow: 0 16px 40px rgba(30,41,59,.07); }
+.tr-ring svg { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); }
+.tr-ring circle { fill: none; stroke-width: 9; stroke-linecap: round; }
+.tr-ring .bg { stroke: var(--bg-alt); }
+.tr-ring .fg { stroke: var(--primary); stroke-dasharray: 326.7; stroke-dashoffset: calc(326.7 * (1 - var(--p) / 100)); transition: stroke-dashoffset 1.4s cubic-bezier(.3,.7,.2,1); }
+.tr-ayah .fg { stroke: var(--sage); }
+.tr-both .fg { stroke: var(--gold); }
+.tr-in { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+.tr-in i { font-size: 18px; color: var(--primary); }
+.tr-ayah .tr-in i { color: var(--sage-dark); }
+.tr-both .tr-in i { color: #8a6a2c; }
+.tr-in b { font-family: var(--font-serif); font-size: 44px; font-weight: 400; line-height: 1; color: var(--text-strong); font-variant-numeric: tabular-nums; }
+.tr-lbl { font-size: 14px; font-weight: 600; color: #475569; }
+.tr-op { font-family: var(--font-serif); font-size: 38px; color: var(--muted); line-height: 170px; opacity: .7; }
+.tr-heart { width: 170px; height: 170px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(145deg, #F09A81, var(--primary-dark)); box-shadow: 0 18px 44px rgba(224,122,95,.35); }
+.tr-heart i { font-size: 54px; color: #fff; }
+.tr-total .tr-lbl b { color: var(--primary-dark); }
+.tango-note { max-width: 520px; margin: 44px auto 0; color: #475569; font-size: 17px; }
+
+/* hidden start state (only once JS is ready) */
+.fx-ready .tango-rings .tr, .fx-ready .tango-rings .tr-op { opacity: 0; transform: translateY(26px); transition: opacity .6s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
+.fx-ready .tango-rings .tr-ring .fg { stroke-dashoffset: 326.7; }
+.fx-ready .tango-rings .tr-heart { transform: scale(.4); transition: transform .7s cubic-bezier(.3,1.6,.5,1); }
+/* sequence: Bunda -> + -> Ayah -> + -> Kombinasi -> = -> heart */
+.tango-rings > :nth-child(1) { transition-delay: 0s; }
+.tango-rings > :nth-child(2) { transition-delay: .25s; }
+.tango-rings > :nth-child(3) { transition-delay: .4s; }
+.tango-rings > :nth-child(4) { transition-delay: .65s; }
+.tango-rings > :nth-child(5) { transition-delay: .8s; }
+.tango-rings > :nth-child(6) { transition-delay: 1.15s; }
+.tango-rings > :nth-child(7) { transition-delay: 1.3s; }
+.tr-bunda .fg { transition-delay: .2s; }
+.tr-ayah .fg { transition-delay: .6s; }
+.tr-both .fg { transition-delay: 1s; }
+.tr-total .tr-heart { transition-delay: 1.45s; }
+.tango-rings.is-in .tr, .tango-rings.is-in .tr-op { opacity: 1; transform: none; }
+.tango-rings.is-in .tr-ring .fg { stroke-dashoffset: calc(326.7 * (1 - var(--p) / 100)); }
+.tango-rings.is-in .tr-heart { transform: none; }
+.tango-rings.is-in .tr-heart i { animation: fxBeat 1.8s ease-in-out 2.2s infinite; }
+
+/* ---------- Journey ---------- */
+.fx-wave { height: 100px; overflow: hidden; background: var(--bg); }
+.fx-wave svg { width: 200%; height: 100%; fill: var(--sage); display: block; animation: fxWave 18s linear infinite; }
+@keyframes fxWave { to { transform: translateX(-50%); } }
+.v2-journey-body { background: var(--sage); padding: 8px 0 80px; margin-top: -1px; }
+.v2-path { position: relative; }
+.v2-path-line { position: absolute; left: 12%; top: 58px; width: 76%; height: 20px; z-index: 0; overflow: visible; transform-origin: 0 50%; }
+.fx-ready .v2-path-line { transform: scaleX(0); transition: transform 1.4s cubic-bezier(.2,.7,.2,1) .2s; }
+.v2-path.is-in .v2-path-line { transform: none; }
+.v2-path-line path { fill: none; stroke: rgba(255,255,255,.5); stroke-width: 2; stroke-dasharray: 6 8; }
+.v2-path .journey-grid { position: relative; z-index: 1; }
+.v2-journey .j-step { transition: transform .3s ease, background .3s ease, opacity .7s ease; }
+.v2-journey .j-step:hover { transform: translateY(-6px) !important; background: rgba(255,255,255,.18); }
+.v2-journey .j-ic { transition: transform .3s ease; }
+.v2-journey .j-step:hover .j-ic { transform: rotate(-8deg) scale(1.08); }
+
+/* ---------- Services ---------- */
+.v2-spec .spec-ic { transition: background .3s, color .3s, transform .3s; }
+.v2-spec .spec:hover .spec-ic { transform: translateY(-4px); }
+.v2-spec .spec:hover .spec-ic i { animation: fxWiggle .5s ease; }
+@keyframes fxWiggle { 0%,100% { transform: rotate(0); } 25% { transform: rotate(-12deg) scale(1.1); } 75% { transform: rotate(10deg) scale(1.1); } }
+
+/* ---------- Difference collage ---------- */
+.collage > .fx-badge { position: absolute; left: 54%; top: 50%; width: 124px; height: 124px; margin: -62px 0 0 -62px; border-radius: 50%; background: var(--surface); box-shadow: var(--shadow-lg); z-index: 3; display: grid; place-items: center; overflow: visible; }
+.fx-badge svg { position: absolute; inset: 4px; width: calc(100% - 8px); height: calc(100% - 8px); animation: fxSpin 20s linear infinite; }
+.fx-badge text { font-size: 10.6px; font-weight: 800; letter-spacing: .14em; fill: var(--primary-dark); font-family: var(--font-sans); }
+.fx-badge i { font-size: 28px; color: var(--gold); }
+@keyframes fxSpin { to { transform: rotate(360deg); } }
+.collage .fx-clip img { transition: transform .8s ease; }
+.collage .fx-clip:hover img { transform: scale(1.06); }
+.tick-list li i { transition: transform .3s; }
+.tick-list li:hover i { transform: scale(1.2) rotate(-10deg); }
+
+/* ---------- Doctor tilt (hover only) ---------- */
+.fx-tilt-group .doc-card2 { transition: transform .2s ease-out, box-shadow .3s; }
+.fx-tilt-group .dc-photo img { transition: transform .6s ease; }
+.fx-tilt-group .doc-card2:hover .dc-photo img { transform: scale(1.05); }
+
+/* ---------- Tools ---------- */
+.fx-float { animation: fxFloat 4.5s ease-in-out infinite; }
+@keyframes fxFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+/* ---------- Stories rail ---------- */
+.story-rail { overflow: hidden; padding: 10px 0 20px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.story-track { display: flex; gap: 20px; width: max-content; animation: fxMarquee 60s linear infinite; }
+.story-rail:hover .story-track { animation-play-state: paused; }
+.story-track .review { width: 340px; flex: none; transition: transform .3s; }
+.story-track .review:hover { transform: translateY(-5px); }
+
+/* ---------- CTA ---------- */
+.v2-cta-banner { position: relative; overflow: hidden; }
+.cta-hearts { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.cta-hearts i { position: absolute; bottom: -30px; color: rgba(255,255,255,.3); animation: fxRise linear infinite; }
+@keyframes fxRise { to { transform: translateY(-440px) rotate(25deg); opacity: 0; } }
+.v2-cta-banner > div:not(.cta-hearts) { position: relative; z-index: 1; }
+
+/* ---------- Image fade-in (CSS only, via loading lazily) ---------- */
+.ph img { animation: fxImg .8s ease both; }
+@keyframes fxImg { from { opacity: 0; } to { opacity: 1; } }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .v2-hero { min-height: auto; }
+  .v2-hero .container { grid-template-columns: 1fr; gap: 10px; }
+  .v2-hero-text { padding-bottom: 10px; text-align: center; }
+  .v2-hero p { margin-left: auto; margin-right: auto; }
+  .v2-cta, .v2-proof { justify-content: center; }
+  .v2-team { height: 380px; }
+  .v2-scroll { display: none; }
+  .tango-rings { flex-wrap: wrap; gap: 10px 8px; max-width: 520px; margin: 0 auto; }
+  .tr { width: 140px; } .tr-ring, .tr-heart { width: 140px; height: 140px; } .tr-op { line-height: 140px; font-size: 30px; }
+  .tr-in b { font-size: 36px; }
+  .v2-path-line { display: none; }
+}
+@media (max-width: 640px) {
+  .v2-team { height: 280px; }
+  .v2-float { font-size: 10.5px; padding: 6px 9px; gap: 7px; }
+  .v2-float i { width: 26px; height: 26px; font-size: 12px; }
+  .v2-float b { font-size: 12px; }
+  .v2-float.f3 { display: none; }
+  .v2-tango { padding: 64px 0; }
+  .tango-rings { display: grid; grid-template-columns: 1fr auto 1fr; justify-items: center; align-items: start; gap: 14px 6px; max-width: 340px; }
+  .tr { width: 124px; gap: 10px; } .tr-ring, .tr-heart { width: 112px; height: 112px; }
+  .tr-op { line-height: 112px; font-size: 26px; }
+  .tr-in b { font-size: 30px; } .tr-in i { font-size: 14px; } .tr-heart i { font-size: 36px; }
+  .tr-lbl { font-size: 12.5px; }
+  .tango-rings > .tr-op:nth-child(4) { display: none; }
+  .story-track .review { width: 270px; }
+  .collage > .fx-badge { width: 96px; height: 96px; margin: -48px 0 0 -48px; }
+  .fx-badge text { font-size: 10px; }
+  .fx-marquee-track { animation-duration: 24s; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .fx-ready .fx-up, .fx-ready .fx-pop, .fx-ready .fx-left, .fx-ready .fx-scale, .fx-ready .fx-stagger > *, .fx-ready .fx-split .c, .fx-ready .v2-team .tm, .fx-ready .v2-float, .fx-ready .tango-rings .tr, .fx-ready .tango-rings .tr-op, .fx-ready .tango-rings .tr-heart { opacity: 1 !important; transform: none !important; clip-path: none !important; }
+}

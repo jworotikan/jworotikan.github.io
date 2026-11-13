@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kontak, Lokasi & Janji Temu — Klinik Fertilitas Dinanti</title>
+  <link rel="icon" type="image/png" href="assets/img/logo/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/v2.css">
+  <link rel="stylesheet" href="assets/css/fx.css">
+</head>
+<body data-page="kontak" data-wa-context="default">
+  <div id="site-header"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Beranda</a> / <span>Kontak &amp; Lokasi</span></div>
+      <span class="eyebrow">Kontak &amp; Janji Temu</span>
+      <h1>Kami Siap Mendengar Cerita Anda</h1>
+      <p class="lead">Hubungi perawat konselor Careline via WhatsApp, isi formulir, atau kunjungi klinik kami secara langsung.</p>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container split" style="align-items:start">
+      <div class="tool-panel">
+        <h3>Kirim Pesan ke Careline</h3>
+        <form id="contactForm" novalidate class="stack" style="margin-top:16px">
+          <div class="form-grid">
+            <div class="field"><label>Nama Panggilan</label><input class="input" name="name" placeholder="Boleh nama samaran"><span class="hint">Belum siap menyebut nama lengkap? Tidak apa-apa.</span></div>
+            <div class="field"><label>Nomor WhatsApp</label><input class="input" name="phone" placeholder="08xx" inputmode="tel"><span class="error-text">Format: 08xx / +628xx</span></div>
+            <div class="field full"><label>Topik</label><select class="select" name="topic"><option>Konsultasi awal</option><option>Jadwal dokter</option><option>Biaya &amp; paket</option><option>Pasien luar kota</option><option>Lainnya</option></select></div>
+            <div class="field full"><label>Pesan</label><textarea class="textarea" name="msg" placeholder="Ceritakan singkat kondisi atau pertanyaan Anda"></textarea></div>
+            <div class="field full"><label class="check"><input type="checkbox" name="consent"> Saya menyetujui Kebijakan Privasi Dinanti.</label><span class="error-text">Mohon centang persetujuan</span></div>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit">Kirim Pesan</button>
+          <button class="btn btn-wa btn-block" type="button" data-wa data-waicon>Atau Chat Langsung via WhatsApp</button>
+        </form>
+      </div>
+      <div class="stack">
+        <div class="info-list">
+          <div class="row"><span class="ic" data-ic="pin"></span><div><strong>Alamat</strong><span>Jl. [Alamat Klinik] No. XX, [Kota], Indonesia</span></div></div>
+          <div class="row"><span class="ic" data-ic="phone"></span><div><strong>Telepon &amp; WhatsApp Careline</strong><span>(021) XXX-XXXX · +62 811-XXXX-DINANTI</span></div></div>
+          <div class="row"><span class="ic" data-ic="mail"></span><div><strong>Email</strong><span>careline@dinanti.id</span></div></div>
+        </div>
+        <div class="tool-panel" style="padding:22px">
+          <strong>Jam Operasional</strong>
+          <table class="hours"><tr><td>Senin – Sabtu</td><td>08.00 – 20.00</td></tr><tr><td>Minggu</td><td>09.00 – 15.00</td></tr><tr><td>Careline WhatsApp</td><td>Setiap hari</td></tr></table>
+        </div>
+        <div class="map-box"><iframe title="Peta lokasi (dummy)" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=106.80%2C-6.23%2C106.84%2C-6.20&amp;layer=mapnik"></iframe></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow sage">Galeri Fasilitas</span><h2>Ruang yang Hangat &amp; Privat</h2></div>
+      <div class="gallery">
+        <div data-scene="lounge" data-label="Ruang tunggu" data-lock="71"></div>
+        <div data-scene="clinic" data-label="Ruang konsultasi" data-lock="72"></div>
+        <div data-scene="lounge" data-label="Sudut kopi" data-lock="73"></div>
+        <div data-scene="lab" data-label="Laboratorium" data-lock="74"></div>
+        <div data-scene="clinic" data-label="Ruang pengambilan sperma privat" data-lock="75"></div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/fx.js"></script>
+</body>
+</html>
