@@ -11,7 +11,7 @@ window.DINANTI = {
     waDisplay: "+62 811-XXXX-DINANTI",
     phone: "(021) XXX-XXXX",
     email: "careline@dinanti.id",
-    address: "Jl. [Alamat Klinik] No. XX, [Kota], Indonesia",
+    address: "Ruko Daikanyama at The Zora No. [—], Lengkong Kulon, Pagedangan, BSD City, Kab. Tangerang, Banten 15339",
     hours: "Senin – Sabtu 08.00 – 20.00 · Minggu 09.00 – 15.00",
   },
 

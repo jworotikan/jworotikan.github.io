@@ -281,3 +281,9 @@ img { max-width: 100%; }
 .logo__img { display: block; height: 44px; width: auto; }
 .footer .logo__img, .fbottom .logo__img { height: 52px; }
 @media (max-width: 600px) { .logo__img { height: 36px; } }
+
+/* ---- Polish (15 Nov): ranting hero menjadi latar, bukan tempelan ---- */
+.hero__main { position: relative; z-index: 1; }
+.hero__tex { z-index: 2; }
+.hero__branch { z-index: 0; right: -64px; top: -56px; width: 150px; opacity: .35; transform: rotate(24deg); }
+@media (max-width: 600px) { .hero__branch { right: -30px; top: -40px; width: 110px; } }

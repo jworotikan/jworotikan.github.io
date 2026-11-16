@@ -57,6 +57,9 @@
     .sec-head h2 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); color: var(--bark); }
     .sec-head p { color: var(--muted); max-width: 30em; margin: 0; }
     .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .grid > .card:first-child { grid-column: 1 / -1; display: grid; grid-template-columns: 1.35fr 1fr; }
+    .grid > .card:first-child .card__img { aspect-ratio: auto; border-bottom: 0; border-right: 1px solid var(--line); }
+    .grid > .card:first-child .card__body { padding: 32px; justify-content: center; }
     .card { display: flex; flex-direction: column; text-decoration: none; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #FFFCF0; transition: transform .5s var(--ease), border-color .4s, box-shadow .5s; }
     .card:hover { transform: translateY(-4px); border-color: rgba(217, 107, 67, .55); box-shadow: 0 30px 60px -40px rgba(47, 58, 18, .5); }
     .card__img { aspect-ratio: 16 / 10; overflow: hidden; background: var(--moss); border-bottom: 1px solid var(--line); }
@@ -80,6 +83,9 @@
     .tile--light { background: var(--linen); border: 1px solid var(--line); }
     .tile--dark { background: var(--night); color: var(--linen); }
     .tile--moss { background: var(--moss); color: var(--linen); }
+    .tile--cream { background: #F5EFE4; border: 1px solid rgba(34, 48, 42, .14); color: #22302A; }
+    .tile--ever { background: #22302A; color: #F5EFE4; }
+    .tile--cameo { background: #B5C6B6; color: #22302A; }
     .tile .art { flex: 1; display: grid; place-items: center; }
     .tile .art img { max-height: 120px; width: auto; }
     .tile__foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: .82rem; }
@@ -95,7 +101,8 @@
     footer a { color: rgba(255, 248, 226, .8); }
 
     @media (max-width: 860px) {
-      .feat, .grid, .logos, .story { grid-template-columns: 1fr; }
+      .feat, .grid, .logos, .story, .grid > .card:first-child { grid-template-columns: 1fr; }
+      .grid > .card:first-child .card__img { aspect-ratio: 16 / 10; border-right: 0; border-bottom: 1px solid var(--line); }
       .feat__img { aspect-ratio: 16 / 10; }
       .story div, .story div + div { padding: 18px 0; border-left: 0; border-bottom: 1px solid var(--line); }
     }
@@ -106,26 +113,26 @@
     <div class="wrap">
       <img class="logo" src="brand/logo-stacked-dark.svg" alt="EL-HR Consultant" width="240" height="275">
       <h1>Mockup website <em>EL-HR Consultant</em></h1>
-      <p>Lima arah desain untuk ditinjau. Mulai dari versi Signature—gabungan terbaik dari semua versi—lalu bandingkan dengan eksplorasi lainnya.</p>
+      <p>Enam arah desain untuk ditinjau. Mulai dari V6—palet terbaru dengan kumpulan strong point semua versi—lalu bandingkan dengan eksplorasi lainnya.</p>
     </div>
   </header>
 
   <main>
     <section class="featured">
       <div class="wrap">
-        <a class="feat" href="v5/index.html">
-          <div class="feat__img"><img src="previews/v5.jpg" alt="Pratinjau V5 Signature" width="960" height="600"></div>
+        <a class="feat" href="v6/index.html">
+          <div class="feat__img"><img src="previews/v6.jpg" alt="Pratinjau V6 Sage, Cream &amp; Brass" width="960" height="600"></div>
           <div class="feat__body">
-            <span class="pill">Rekomendasi</span>
-            <h2>V5 · Signature</h2>
-            <p>Versi terbaik: palet resmi brand, struktur lengkap, dan detail interaksi yang tenang namun berkesan.</p>
+            <span class="pill">Rekomendasi · Terbaru</span>
+            <h2>V6 · Sage, Cream &amp; Brass</h2>
+            <p>Palet 2026 (Pantone Cameo Green, Sage, Warm Cream, Brass Gold) dengan kumpulan strong point dari V1–V5.</p>
             <ul>
-              <li>Logo baru “el” bertunas &amp; lengkungan khas di setiap foto</li>
-              <li>Lencana berputar, marquee brand, angka yang menghitung naik</li>
-              <li>Daftar layanan dengan pratinjau foto mengikuti kursor</li>
-              <li>Formulir kebutuhan → WhatsApp / email dalam satu klik</li>
+              <li>Hero terang &amp; hangat, judul bergradasi brass, tombol brass metalik</li>
+              <li>Lengkungan foto, lencana berputar &amp; layanan dengan pratinjau kursor (V5)</li>
+              <li>Kartu kertas, blok About menumpuk &amp; segel monogram (V1 · V3)</li>
+              <li>Pilar ikon botanical, label washi, QR &amp; formulir percakapan (V2 · V4 · V0)</li>
             </ul>
-            <span class="btn">Buka V5 <span aria-hidden="true">→</span></span>
+            <span class="btn">Buka V6 <span aria-hidden="true">→</span></span>
           </div>
         </a>
       </div>
@@ -141,6 +148,14 @@
           <p>V1 &amp; V3 memakai konten dokumen pertama (ringkas). V2 &amp; V4 memakai konten dokumen kedua (terstruktur ala hrd-forum).</p>
         </div>
         <div class="grid">
+          <a class="card" href="v5/index.html">
+            <div class="card__img"><img src="previews/v5.jpg" alt="Pratinjau V5" width="960" height="600" loading="lazy"></div>
+            <div class="card__body">
+              <div class="card__top"><h3><b>V5</b>Signature Olive</h3><span class="swatches"><i style="background:#2F3A12"></i><i style="background:#6F743B"></i><i style="background:#FFE9C5"></i><i style="background:#D96B43"></i></span></div>
+              <p>Gabungan terbaik V1–V4 dalam palet resmi dokumen (olive &amp; terracotta).</p>
+              <span class="card__go">Buka versi <span>→</span></span>
+            </div>
+          </a>
           <a class="card" href="v1/index.html">
             <div class="card__img"><img src="previews/v1.jpg" alt="Pratinjau V1" width="960" height="600" loading="lazy"></div>
             <div class="card__body">
@@ -198,6 +213,18 @@
           <div class="tile tile--moss">
             <div class="art"><img src="brand/logo-mark-dark.svg" alt="Monogram el" width="110" height="106"></div>
             <div class="tile__foot"><span>Monogram · ikon &amp; favicon</span><a href="brand/logo-mark-dark.svg" download>Unduh SVG</a></div>
+          </div>
+          <div class="tile tile--cream">
+            <div class="art"><img src="brand/logo-brass.svg" alt="Logo varian Sage &amp; Brass" width="300" height="78"></div>
+            <div class="tile__foot"><span>Varian Sage &amp; Brass (V6)</span><a href="brand/logo-brass.svg" download>Unduh SVG</a></div>
+          </div>
+          <div class="tile tile--ever">
+            <div class="art"><img src="brand/logo-stacked-brass-dark.svg" alt="Logo tumpuk brass untuk latar gelap" width="110" height="126"></div>
+            <div class="tile__foot"><span>Tumpuk brass · latar gelap</span><a href="brand/logo-stacked-brass-dark.svg" download>Unduh SVG</a></div>
+          </div>
+          <div class="tile tile--cameo">
+            <div class="art"><img src="brand/logo-mark-brass.svg" alt="Monogram brass" width="110" height="106"></div>
+            <div class="tile__foot"><span>Monogram brass · favicon V6</span><a href="brand/logo-mark-brass.svg" download>Unduh SVG</a></div>
           </div>
         </div>
         <div class="story">
