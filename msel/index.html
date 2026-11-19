@@ -57,9 +57,6 @@
     .sec-head h2 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); color: var(--bark); }
     .sec-head p { color: var(--muted); max-width: 30em; margin: 0; }
     .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-    .grid > .card:first-child { grid-column: 1 / -1; display: grid; grid-template-columns: 1.35fr 1fr; }
-    .grid > .card:first-child .card__img { aspect-ratio: auto; border-bottom: 0; border-right: 1px solid var(--line); }
-    .grid > .card:first-child .card__body { padding: 32px; justify-content: center; }
     .card { display: flex; flex-direction: column; text-decoration: none; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #FFFCF0; transition: transform .5s var(--ease), border-color .4s, box-shadow .5s; }
     .card:hover { transform: translateY(-4px); border-color: rgba(217, 107, 67, .55); box-shadow: 0 30px 60px -40px rgba(47, 58, 18, .5); }
     .card__img { aspect-ratio: 16 / 10; overflow: hidden; background: var(--moss); border-bottom: 1px solid var(--line); }
@@ -101,8 +98,7 @@
     footer a { color: rgba(255, 248, 226, .8); }
 
     @media (max-width: 860px) {
-      .feat, .grid, .logos, .story, .grid > .card:first-child { grid-template-columns: 1fr; }
-      .grid > .card:first-child .card__img { aspect-ratio: 16 / 10; border-right: 0; border-bottom: 1px solid var(--line); }
+      .feat, .grid, .logos, .story { grid-template-columns: 1fr; }
       .feat__img { aspect-ratio: 16 / 10; }
       .story div, .story div + div { padding: 18px 0; border-left: 0; border-bottom: 1px solid var(--line); }
     }
@@ -113,26 +109,26 @@
     <div class="wrap">
       <img class="logo" src="brand/logo-stacked-dark.svg" alt="EL-HR Consultant" width="240" height="275">
       <h1>Mockup website <em>EL-HR Consultant</em></h1>
-      <p>Enam arah desain untuk ditinjau. Mulai dari V6—palet terbaru dengan kumpulan strong point semua versi—lalu bandingkan dengan eksplorasi lainnya.</p>
+      <p>Tujuh arah desain untuk ditinjau. Mulai dari V7—disusun dari masukan klien atas V2 &amp; V6—lalu bandingkan dengan eksplorasi lainnya.</p>
     </div>
   </header>
 
   <main>
     <section class="featured">
       <div class="wrap">
-        <a class="feat" href="v6/index.html">
-          <div class="feat__img"><img src="previews/v6.jpg" alt="Pratinjau V6 Sage, Cream &amp; Brass" width="960" height="600"></div>
+        <a class="feat" href="v7/index.html">
+          <div class="feat__img"><img src="previews/v7.jpg" alt="Pratinjau V7" width="960" height="600"></div>
           <div class="feat__body">
-            <span class="pill">Rekomendasi · Terbaru</span>
-            <h2>V6 · Sage, Cream &amp; Brass</h2>
-            <p>Palet 2026 (Pantone Cameo Green, Sage, Warm Cream, Brass Gold) dengan kumpulan strong point dari V1–V5.</p>
+            <span class="pill">Rekomendasi · Sesuai Request Klien</span>
+            <h2>V7 · Client Edition</h2>
+            <p>Gabungan V2 (hero, What We Do) dan V6 (konten lengkap, bulatan berputar, Meet the Principal), plus seluruh update dari klien.</p>
             <ul>
-              <li>Hero terang &amp; hangat, judul bergradasi brass, tombol brass metalik</li>
-              <li>Lengkungan foto, lencana berputar &amp; layanan dengan pratinjau kursor (V5)</li>
-              <li>Kartu kertas, blok About menumpuk &amp; segel monogram (V1 · V3)</li>
-              <li>Pilar ikon botanical, label washi, QR &amp; formulir percakapan (V2 · V4 · V0)</li>
+              <li>Hero V2 yang lebih tenang + bulatan berputar, running text sebelum Track Record</li>
+              <li>8 layanan termasuk HCBP &amp; General Affair, plus set-up team</li>
+              <li>Jejak Ekosistem dengan rincian Kawan Lama Group &amp; industri on hand</li>
+              <li>Kontak baru: 0816 964 036 · elina.kesuma@gmail.com</li>
             </ul>
-            <span class="btn">Buka V6 <span aria-hidden="true">→</span></span>
+            <span class="btn">Buka V7 <span aria-hidden="true">→</span></span>
           </div>
         </a>
       </div>
@@ -148,6 +144,14 @@
           <p>V1 &amp; V3 memakai konten dokumen pertama (ringkas). V2 &amp; V4 memakai konten dokumen kedua (terstruktur ala hrd-forum).</p>
         </div>
         <div class="grid">
+          <a class="card" href="v6/index.html">
+            <div class="card__img"><img src="previews/v6.jpg" alt="Pratinjau V6" width="960" height="600" loading="lazy"></div>
+            <div class="card__body">
+              <div class="card__top"><h3><b>V6</b>Sage, Cream &amp; Brass</h3><span class="swatches"><i style="background:#22302A"></i><i style="background:#7D8866"></i><i style="background:#B5C6B6"></i><i style="background:#A88B52"></i></span></div>
+              <p>Palet 2026 dengan kumpulan strong point V1–V5.</p>
+              <span class="card__go">Buka versi <span>→</span></span>
+            </div>
+          </a>
           <a class="card" href="v5/index.html">
             <div class="card__img"><img src="previews/v5.jpg" alt="Pratinjau V5" width="960" height="600" loading="lazy"></div>
             <div class="card__body">

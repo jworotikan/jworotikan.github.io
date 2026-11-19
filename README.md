@@ -60,8 +60,8 @@ Today I work at **PT. Teknologi GoVirtual Indonesia**. I lead the development of
 | Apr 2024 – Jul 2025 | IT Officer & Programmer | Living World Grand Wisata |
 | Jun 2017 – Jan 2024 | IT Manager & Software Engineer | PT. I-Management Indonesia |
 | Jun 2018 – Mar 2024 | IT Programmer | PT. Inter Pan Pasifik Futures |
-| Jun 2016 – Dec 2016 | PIC Sales & Marketing, Bogor Region | X-TRO (XL Axiata) |
-| Jul 2010 – Jun 2016 | Network & Software Engineer | CV. Withtech |
+| Mar 2016 – Feb 2017 | PIC Sales & Marketing, Bogor Region | X-TRO (XL Axiata) |
+| Jun 2010 – Mar 2016 | Network & Software Engineer | CV. Withtech |
 
 Built platforms for Kota Semarang, DKI Jakarta, Kabupaten Lampung Selatan, Kabupaten Lahat, the Ministry of Education (Kemdikbud) and Living World. Key clients at PT. I-Management included Bank Mayora, Wilmar Group, Mayapada Bank and Bank Papua.
 
@@ -96,13 +96,13 @@ Built platforms for Kota Semarang, DKI Jakarta, Kabupaten Lampung Selatan, Kabup
 
 All certifications are from Dicoding and can be verified through the links below.
 
-- [AWS Cloud Practitioner](https://www.dicoding.com/certificates/72ZDOJYQJXYW) (2024)
-- [Dasar DevOps](https://www.dicoding.com/certificates/EYX49GYRWPDL) (2024)
-- [Back-End Development](https://www.dicoding.com/certificates/MEPJ4RL3NP3V) (2024)
-- [JavaScript Fundamentals](https://www.dicoding.com/certificates/N9ZO631G6PG5) (2023)
-- [Front-End Web](https://www.dicoding.com/certificates/07Z65RVY5XQR) (2023)
-- [Web Programming](https://www.dicoding.com/certificates/MRZML46E3PYQ) (2023)
-- [Java for Beginners](https://www.dicoding.com/certificates/1RXYO43JGZVM) (2023)
+- [AWS Cloud Practitioner](https://www.dicoding.com/certificates/72ZDOJYQJXYW) (2022)
+- [Dasar DevOps](https://www.dicoding.com/certificates/EYX49GYRWPDL) (2023)
+- [Back-End Development](https://www.dicoding.com/certificates/JLX1G5M95Z72) (2022)
+- [JavaScript Fundamentals](https://www.dicoding.com/certificates/KEXLG1OOMZG2) (2022)
+- [Front-End Web](https://www.dicoding.com/certificates/81P2826DJPOY) (2022)
+- [Web Programming](https://www.dicoding.com/certificates/4EXG9YLVQZRL) (2022)
+- [Java for Beginners](https://www.dicoding.com/certificates/6RPN68W14P2M) (2022)
 
 ## Contact
 
